@@ -624,7 +624,7 @@ public class JunkSettings extends PreferenceActivity  {
      * Settings subclasses for launching independently.
      */
     // Junk
-    public static class CustomJunkSettingsActivity extends JunkSettings { /* empty */ }
+    public static class JunkSettingsActivity extends JunkSettings { /* empty */ }
     public static class CustomQuietTimeSettingsActivity extends JunkSettings { /* empty */ }
     public static class CustomColorSettingsActivity extends JunkSettings { /* empty */ }
     public static class CustomShowHideTogglesColorSettingsActivity extends JunkSettings { /* empty */ }
