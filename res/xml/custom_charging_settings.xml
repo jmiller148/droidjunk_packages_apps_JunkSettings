@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Charge Settings"
+    android:key="custom_charge_settings"
+	 >
+
+ 
+    
+    
+    <PreferenceCategory
+		android:title="C H A R G I N G   L E V E L   C O L O R S"
+		android:key="charge_color_ranges"
+		android:summary="Charging levels to apply colors"	>    
+ 
+
+ 	
+	<DJSeekBarPreference
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="charge_levels_one"
+		android:title="Max Level One"
+		android:summary="Maximimum level for the color"
+		android:defaultValue="10" />	
+   
+
+    	
+	<DJSeekBarPreference
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="charge_levels_two"
+		android:title="Max Level Two"
+		android:summary="Maximimum level for the color"
+		android:defaultValue="30" />	
+   
+
+    
+    </PreferenceCategory>
+	
+
+</PreferenceScreen>

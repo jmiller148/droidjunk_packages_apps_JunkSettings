@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="Quick Colors"
+	>
+	
+    
+   	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_color"
+		android:title="Color"
+		android:summary="This color will be applied to every item that is checked"
+		android:defaultValue="#ff3fa2c7" 
+		alphaSlider="false" /> 	    
+
+
+	<Preference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_clear_all"
+		android:title="Clear All" 
+		/>
+   		
+   	
+   		
+    <PreferenceCategory
+		android:title="S I G N A L   I C O N S"
+		android:key="quickcolor_icons">
+
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_icon_color"
+		android:title="Signal Icons" 
+		android:defaultValue="false"	/>		
+		
+	</PreferenceCategory>
+	
+    
+
+		
+    <PreferenceCategory
+		android:title="B A T T E R Y   I C O N S"
+		android:key="quickcolor_battery_ cons">    
+    	
+        
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_levels_color_one"
+		android:title="Battery Level One" 
+		android:defaultValue="false"	/>		
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_levels_color_two"
+		android:title="Battery Level Two" 
+		android:defaultValue="false"	/>			
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_levels_color_three"
+		android:title="Battery Level Three" 
+		android:defaultValue="false"	/>	        
+        
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_depleted_levels_color_one"
+		android:title="Depleted Level One Color"
+		android:defaultValue="false"	/>
+	
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_depleted_levels_color_two"
+		android:title="Depleted Level Two Color"
+		android:defaultValue="false"	/>
+			
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_depleted_levels_color_three"
+		android:title="Depleted Level Three Color"
+		android:defaultValue="false"	/>	
+					
+    </PreferenceCategory>
+
+    
+    <PreferenceCategory
+		android:title="B A T T E R Y   E X T R A S"
+		android:key="quickcolor_battery_extras">
+    
+    
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_circle_color_one"
+		android:title="Circle/Square Color Level One"
+		android:defaultValue="false"	/>
+
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_circle_color_two"
+		android:title="Circle/Square Color Level Two"
+		android:defaultValue="false"	/>
+	
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_circle_color_three"
+		android:title="Circle/Square Color Level Three"
+		android:defaultValue="false"	/>
+			
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_number_color_one"
+		android:title="Number Color Level One"
+		android:defaultValue="false"	/>			
+
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_number_color_two"
+		android:title="Number Color Level Two"
+		android:defaultValue="false"	/>			
+	
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_number_color_three"
+		android:title="Number Color Level Three"
+		android:defaultValue="false"	/>			
+
+	</PreferenceCategory>	    
+    
+    <PreferenceCategory
+		android:title="C H A R G I N G   I C O N"
+		android:key="quickcolor_charging">
+
+			
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_charge_levels_color_one"
+		android:title="Charging Level One" 
+		android:defaultValue="false"	/>		
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_charge_levels_color_two"
+		android:title="Charging Level Two" 
+		android:defaultValue="false"	/>			
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_charge_levels_color_three"
+		android:title="Charging Level Three" 
+		android:defaultValue="false"	/>	
+		
+					
+    </PreferenceCategory>
+    
+    
+    <PreferenceCategory
+		android:title="N A V I G A T I O N   B A R"
+		android:key="quickcolor_navbar">
+ 
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_nav_bar_color"
+		android:title="Navigation Bar" 
+		android:defaultValue="false"	/>			        
+        				
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_nav_button_color"
+		android:title="Navigation Button" 
+		android:defaultValue="false"	/>			
+				 
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_nav_button_glow_color"
+		android:title="Navigation Button Glow" 
+		android:defaultValue="false"	/>				
+	
+    </PreferenceCategory>
+  
+
+    
+    
+	<PreferenceCategory
+		android:title="C L O C K"
+		android:key="quickcolor_clock">
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_clock_color"
+		android:title="Clock" 
+		android:defaultValue="false"	/>	   		
+   		
+    </PreferenceCategory>
+
+    
+	
+        
+    <PreferenceCategory
+		android:title="S T A T U S B A R   P U L L D O W N"
+		android:key="quickcolor_pulldown">
+   			
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_date_bar_color"
+		android:title="Date Bar" 
+		android:defaultValue="false"	/>	        
+        	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_date_color"
+		android:title="Date" 
+		android:defaultValue="false"	/>			
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_clear_button_color"
+		android:title="Clear All Button" 
+		android:defaultValue="false"	/>	       
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_clear_button_text_color"
+		android:title="Clear All Button Text" 
+		android:defaultValue="false"	/>	     	
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_shade_color"
+		android:title="Pulldown Shade" 
+		android:defaultValue="false"	/>	       	
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_carrier_frame_color"
+		android:title="Carrier Bar" 
+		android:defaultValue="false"	/>			
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_handle_color"
+		android:title="Pulldown Handle" 
+		android:defaultValue="false"	/>			
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_grip_color"
+		android:title="Pulldown Grip" 
+		android:defaultValue="false"	/>			
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_carrier_color"
+		android:title="Carrier" 
+		android:defaultValue="false"	/>			
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_battery_label_color"
+		android:title="Battery Level" 
+		android:defaultValue="false"	/>			
+					
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_temp_label_color"
+		android:title="Battery Temperature" 
+		android:defaultValue="false"	/>	
+
+		 
+    </PreferenceCategory>    
+        
+ 
+    
+    <PreferenceCategory
+		android:title="P U L L D O W N   N O T I F I C A T I O N S"
+		android:key="quickcolor_pulldown_notif">    
+    
+    
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_icon_bg_color"
+		android:title="Icon Background" 
+		android:defaultValue="false"	/>	
+        
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_text_color"
+		android:title="Text" 
+		android:defaultValue="false"	/>	
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_text_bg_color"
+		android:title="Text Background" 
+		android:defaultValue="false"	/>	
+    
+    </PreferenceCategory>        
+    
+    
+    
+    
+    <PreferenceCategory
+		android:title="T O G G L E S"
+		android:key="quickcolor_toggles">
+
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_color"
+		android:title="Toggle Background" 
+		android:defaultValue="false"	/>			
+				
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_icon_on_color"
+		android:title="Icon On" 
+		android:defaultValue="false"	/>				
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_icon_inter_color"
+		android:title="Icon Intermediate" 
+		android:defaultValue="false"	/>				
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_icon_off_color"
+		android:title="Icon Off" 
+		android:defaultValue="false"	/>				
+				
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_ind_on_color"
+		android:title="Indicator On" 
+		android:defaultValue="false"	/>				
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_ind_off_color"
+		android:title="Indicator Off" 
+		android:defaultValue="false"	/>		
+					
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_text_on_color"
+		android:title="Text On" 
+		android:defaultValue="false"	/>		
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_text_off_color"
+		android:title="Text Off" 
+		android:defaultValue="false"	/>			
+				
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_toggle_divider_color"
+		android:title="Divider" 
+		android:defaultValue="false"	/>				
+		
+    </PreferenceCategory>         				
+ 
+        
+</PreferenceScreen>
+

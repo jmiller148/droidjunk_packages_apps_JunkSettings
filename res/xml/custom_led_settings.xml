@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="LED Settings"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+	<CheckBoxPreference
+		android:key="use_led"
+		android:summaryOn="LED will be used"
+		android:summaryOff="LED will not be used"
+		android:title="Use LED for notifications" 
+		android:defaultValue="true"
+		/>    
+
+	<CheckBoxPreference
+		android:key="pulse_flash_led"
+		android:summaryOn="LED pulse"
+		android:summaryOff="LED flash"
+		android:title="Pulse or Flash Led" 
+		android:defaultValue="false"
+		/>    
+	
+	<CheckBoxPreference 
+		android:key="pulse_led_screen_on"
+		android:summaryOn="Pulse LED with Screen On"
+		android:summaryOff="Do not pulse LED with screen on"
+		android:title="LED With Screen On" 
+		android:defaultValue="false" />
+
+    <PreferenceCategory
+		android:title="D E F A U L T   L E D"
+		android:key="default_led">
+
+	<CheckBoxPreference 
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="default_led_color_on"
+		android:summaryOn="Default LED color is on"
+		android:summaryOff="Default LED color is off"
+		android:title="Use Default LED Color" 
+		android:defaultValue="true" />        
+        		
+
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="default_led_color_on"
+		android:key="default_led_color"
+		android:title="Default LED Color"
+		android:summary="Color for default LED if not set by app"
+		android:defaultValue="#ff3F9BBF" 
+		alphaSlider="false" /> 
+
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="default_led_color_on"
+   		android:key="default_led_on_ms"
+		android:title="LED On Time Adjustment"
+		android:defaultValue="3" />	
+		
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="default_led_color_on"
+   		android:key="default_led_off_ms"
+		android:title="LED Off Time Adjustment"
+		android:defaultValue="3" />
+			
+   	</PreferenceCategory>
+
+
+    <PreferenceCategory
+		android:title="I N C O M I N G   C A L L"
+		android:key="phone_leds">
+
+	<CheckBoxPreference 
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="incoming_call_led_on"
+		android:summaryOn="Incoming Call LED is on"
+		android:summaryOff="Incoming Call LED is off"
+		android:title="Use Imcoming Call LED" 
+		android:defaultValue="true" />         
+        
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="incoming_call_led_on"
+		android:key="incoming_call_color"
+		android:title="Incoming Call Color"
+		android:summary="LED color for incoming call"
+		android:defaultValue="#ffffffff" 
+		alphaSlider="false" /> 
+		
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:dependency="incoming_call_led_on"
+		android:key="incoming_call_pulse"
+		android:summaryOn="LED will pulse"
+		android:summaryOff="LED will be steady on"
+		android:title="LED Pulse" 
+		android:defaultValue="true"	/>		
+
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="incoming_call_pulse"
+   		android:key="incoming_led_on_ms"
+		android:title="LED On Time Adjustment"
+		android:defaultValue="3" />	
+		
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="incoming_call_pulse"
+   		android:key="incoming_led_off_ms"
+		android:title="LED Off Time Adjustment"
+		android:defaultValue="3" />
+
+	</PreferenceCategory>
+
+    
+    
+    <PreferenceCategory
+		android:title="M I S S E D   C A L L S"
+		android:key="missed_call_leds">
+
+	<CheckBoxPreference 
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="missed_call_led_on"
+		android:summaryOn="Missed Call LED is on"
+		android:summaryOff="Missed Call LED is off"
+		android:title="Use Missed Call LED" 
+		android:defaultValue="true" />         
+        
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="missed_call_led_on"
+		android:key="missed_call_color"
+		android:title="LED Color"
+		android:summary="LED color for missed calls"
+		android:defaultValue="#ffff0000" 
+		alphaSlider="false" /> 
+		
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:dependency="missed_call_led_on"
+		android:key="missed_call_pulse"
+		android:summaryOn="LED will pulse"
+		android:summaryOff="LED will be steady on"
+		android:title="LED Pulse" 
+		android:defaultValue="true"	/>		
+
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="missed_call_pulse"
+   		android:key="missed_call_led_on_ms"
+		android:title="LED On Time Adjustment"
+		android:summary="Number of seconds LED is on"
+		android:defaultValue="3" />	
+		
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="missed_call_pulse"
+   		android:key="missed_call_led_off_ms"
+		android:title="LED Off Time Adjustment"
+		android:defaultValue="3" />
+
+  	</PreferenceCategory>
+  	
+    
+    
+    <PreferenceCategory
+		android:title="V O I C E   M A I L"
+		android:key="voice_mail_leds">
+
+	<CheckBoxPreference 
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="voice_mail_led_on"
+		android:summaryOn="Voice Mail LED is on"
+		android:summaryOff="Voice Mail LED is off"
+		android:title="Use Voice Mail LED" 
+		android:defaultValue="true" />         
+        
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="voice_mail_led_on"
+		android:key="voice_mail_color"
+		android:title="LED Color"
+		android:summary="LED color for voice mail calls"
+		android:defaultValue="#ffff0000" 
+		alphaSlider="false" /> 
+		
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:dependency="voice_mail_led_on"
+		android:key="voice_mail_pulse"
+		android:summaryOn="LED will pulse"
+		android:summaryOff="LED will be steady on"
+		android:title="Pulse LED" 
+		android:defaultValue="true"	/>		
+
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="voice_mail_pulse"
+   		android:key="voice_mail_led_on_ms"
+		android:title="LED On Time Adjustment"
+		android:defaultValue="3" />	
+		
+	<DJSeekBarPreference	
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="voice_mail_pulse"
+   		android:key="voice_mail_led_off_ms"
+		android:title="LED Off Time Adjustment"
+		android:defaultValue="3" />
+			
+   	</PreferenceCategory>
+
+</PreferenceScreen>

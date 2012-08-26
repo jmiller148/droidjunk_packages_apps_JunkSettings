@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="Statusbar Pulldown Settings"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+
+
+    
+    <PreferenceCategory
+		android:title="D A T E"
+		android:key="date_settings">
+
+	<DJSeekBarPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="date_size"
+		android:title="Date Text Size"
+		android:summary="Size of the date text"
+		android:defaultValue="17" />		 	
+
+    </PreferenceCategory>    
+    
+    
+    
+    <PreferenceCategory
+		android:title="C A R R I E R"
+		android:key="carrier_settings">
+
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="show_carrier"
+		android:summaryOn="Show the carrier in the pulldown"
+		android:summaryOff="Do not show the carrier in the pulldown"
+		android:title="Show Carrier" 
+		android:defaultValue="true"	/>        
+        				
+  				
+	<DJSeekBarPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+    	android:dependency="show_carrier"
+		android:key="carrier_size"
+		android:title="Carrier Text Size"
+		android:summary="Size of the carrier text"
+		android:defaultValue="15" />		 
+    </PreferenceCategory>
+  
+    <PreferenceCategory
+		android:title="C U S T O M   C A R R I E R"
+		android:key="carrier_settings_custom">
+
+   	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+   	    android:dependency="show_carrier"
+		android:key="carrier_custom"
+		android:summaryOn="Show custom carrier name"
+		android:summaryOff="Show default carrier name"
+		android:title="Custom Carrier" 
+		android:defaultValue="false"	/>
+
+	<EditTextPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+        android:dependency="carrier_custom"
+		android:key="carrier_custom_text"
+		android:title="Custom Carrier Name" 
+		android:summary="Change the text for the carrier"
+		android:dialogTitle="Carrier Text"
+		android:dialogMessage="Enter text"	
+		android:defaultValue="- J  U  N  K -" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+		android:title="B A T T E R Y   L E V E L"
+		android:key="battery_label_settings">
+	
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="show_battery_label"
+		android:summaryOn="Show the battery level in the pulldown"
+		android:summaryOff="Do not show the battery level in the pulldown"
+		android:title="Show Battery Level" 
+		android:defaultValue="true"	/>		        
+   				
+	<DJSeekBarPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+    	android:dependency="show_battery_label"
+		android:key="battery_label_size"
+		android:title="Battery Level Text Size"
+		android:summary="Size of the battery level text"
+		android:defaultValue="14" />		 
+    </PreferenceCategory>    
+
+    
+    <PreferenceCategory
+		android:title="B A T T E R Y   T E M P E R A T U R E"
+		android:key="temp_label_settings">
+	
+        
+    <CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="show_temp_label"
+		android:summaryOn="Show the battery temperature in the pulldown"
+		android:summaryOff="Do not show the battery temperature in the pulldown"
+		android:title="Show Battery Temperature" 
+		android:defaultValue="true"	/>    
+   				
+  				
+	<DJSeekBarPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+    	android:dependency="show_temp_label"
+		android:key="temp_label_size"
+		android:title="Battery Temperature Text Size"
+		android:summary="Size of the battery temperature text"
+		android:defaultValue="14" />		 
+    </PreferenceCategory>        
+  
+    
+    
+ 
+    
+
+
+</PreferenceScreen>
+

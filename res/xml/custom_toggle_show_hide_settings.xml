@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="Show or Hide Toggles"
+>
+
+	<CheckBoxPreference 
+		android:key="toggles_show_torch"
+		android:summaryOn="Torch Toggle is on"
+		android:summaryOff="Torch Toggle is off"
+		android:title="Torch Toggle" 
+		android:defaultValue="true"	/>    
+    
+	<CheckBoxPreference 
+		android:key="toggles_show_fourg"
+		android:summaryOn="4G Toggle is on"
+		android:summaryOff="4G Toggle is off"
+		android:title="4G Toggle" 
+		android:defaultValue="true"	/>
+
+	<CheckBoxPreference 
+		android:key="toggles_show_wifi"
+		android:summaryOn="Wifi Toggle is on"
+		android:summaryOff="Wifi Toggle is off"
+		android:title="Wifi Toggle" 
+		android:defaultValue="true"	/>
+		
+	<CheckBoxPreference 
+		android:key="toggles_show_gps"
+		android:summaryOn="GPS Toggle is on"
+		android:summaryOff="GPS Toggle is off"
+		android:title="GPS Toggle" 
+		android:defaultValue="true"	/>
+		
+	<CheckBoxPreference 
+		android:key="toggles_show_bluetooth"
+		android:summaryOn="Bluetooth Toggle is on"
+		android:summaryOff="Bluetooth Toggle is off"
+		android:title="Bluetooth Toggle" 
+		android:defaultValue="true"	/>
+	
+	<CheckBoxPreference 
+		android:key="toggles_show_nfc"
+		android:summaryOn="NFC Toggle is on"
+		android:summaryOff="NFC Toggle is off"
+		android:title="NFC Toggle" 
+		android:defaultValue="true"	/>	
+		
+	<CheckBoxPreference 
+		android:key="toggles_show_sound"
+		android:summaryOn="Sound Toggle is on"
+		android:summaryOff="Sound Toggle is off"
+		android:title="Sound Toggle" 
+		android:defaultValue="true"	/>						
+
+	<CheckBoxPreference 
+		android:key="toggles_show_airplane"
+		android:summaryOn="Airplane Toggle is on"
+		android:summaryOff="Airplane Toggle is off"
+		android:title="Airplane Toggle" 
+		android:defaultValue="true"	/>		
+		
+	<CheckBoxPreference 
+		android:key="toggles_show_brightness"
+		android:summaryOn="Brightness Toggle is on"
+		android:summaryOff="Brightness Toggle is off"
+		android:title="Brightness Toggle" 
+		android:defaultValue="true"	/>		
+		
+	<CheckBoxPreference 
+		android:key="toggles_show_rotate"
+		android:summaryOn="Rotate Toggle is on"
+		android:summaryOff="Rotate Toggle is off"
+		android:title="Rotate Toggle" 
+		android:defaultValue="true"	/>		
+		
+	<CheckBoxPreference 
+		android:key="toggles_show_sync"
+		android:summaryOn="Sync Toggle is on"
+		android:summaryOff="Sync Toggle is off"
+		android:title="Sync Toggle" 
+		android:defaultValue="true"	/>
+		
+	<CheckBoxPreference 
+		android:key="toggles_show_data"
+		android:summaryOn="Data Toggle is on"
+		android:summaryOff="Data Toggle is off"
+		android:title="Data Toggle" 
+		android:defaultValue="true"	/>										
+
+
+</PreferenceScreen>
+

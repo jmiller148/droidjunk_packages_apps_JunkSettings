@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="Notification Quiet Time"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+
+
+	<CheckBoxPreference 
+		android:key="quiet_time_on"
+		android:summaryOn="Notification Quiet Time is ON"
+		android:summaryOff="Notification Quiet Time is OFF"
+		android:title="Notification Quiet Time" 
+		android:defaultValue="false"	/>
+	
+			
+	<CheckBoxPreference 
+		android:key="quiet_time_notif"
+		android:dependency="quiet_time_on"
+		android:summaryOn="Show statusbar notifications is ON"
+		android:summaryOff="Show statusbar notifications is OFF"
+		android:title="Show Statusbar Notifications" 
+		android:defaultValue="false"	/>
+		
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_daily"
+		android:title="Daily" />
+ 	
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_sunday"
+		android:title="Sunday" />
+
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_monday"
+		android:title="Monday" /> 	
+ 	
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_tuesday"
+		android:title="Tuesday" /> 	
+ 	
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_wednesday"
+		android:title="Wednesday" />
+ 	
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_thursday"
+		android:title="Thursday" /> 	
+ 	
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_friday"
+		android:title="Friday" /> 	
+ 	
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_saturday"
+		android:title="Saturday" /> 	
+ 	
+ 		
+</PreferenceScreen>
+

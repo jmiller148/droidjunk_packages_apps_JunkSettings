@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Strings for Dialog yes button -->
+    <string name="yes">"Yes"</string>
+
+    <!-- Strings for Dialog no button -->
+    <string name="no">"No"</string>
+
+
+ 
+    
+    <!-- JUNK -->
+    <string name="junk_settings_main">Customize Your Junk</string>
+    <string name="app_label">Junk Settings</string>
+        <!-- Preferences -->
+    <string name="backup_restore_label">BACKUP AND RESTORE</string>
+    <string name="backup_restore">Backup And Restore Settings</string>
+    <string name="backup_settings">Backup Settings</string>
+    <string name="restore_settings">Restore Settings</string>
+
+    <string name="colors_label">COLORS</string>
+    <string name="quick_colors">Quick Colors</string>
+    <string name="group_colors">Color Groups</string>
+    
+    <string name="themes_label">THEMES</string>
+    <string name="theme_settings">Preset and User Themes</string>
+
+    
+    <string name="notifications_label">NOTIFICATION  SETTINGS</string>
+    <string name="quiet_time_main_settings">Notification Quiet Time</string>
+    <string name="led_settings">  Notification LED Settings</string>
+    
+    <string name="statusbar_label">STATUSBAR</string>    
+    <string name="clock_settings">Clock Settings</string>
+    <string name="battery_icon_settings">Battery Icons</string>
+    <string name="battery_settings">Battery Settings</string>
+    <string name="charging_settings">Charging Settings</string>
+    <string name="statusbar_pulldown_label">STATUSBAR PULLDOWN</string>  
+    <string name="pulldown_settings">Statusbar Pulldown Settings</string>
+    <string name="toggle_settings">Toggle Settings</string>
+    <string name="navbar_settings">Navigation Bar Settings</string>
+    <!-- ************************************************************************************* -->
+    
+    
+    
+</resources>

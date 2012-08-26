@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Stock Battery Settings"
+    android:key="stock_bat_settings"
+	 >
+    
+  
+    <PreferenceCategory
+		android:title="E X T R A S"
+		android:key="battery_bars">    
+    
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="battery_show_number"
+		android:summaryOn="Number is on"
+		android:summaryOff="Number is off"
+		android:title="Show Number" 
+		android:defaultValue="false"	/>	        
+    
+    </PreferenceCategory>	    
+    
+    <PreferenceCategory
+		android:title="D E P L E T E D   L E V E L S"
+		android:key="depleted_color_ranges"
+		android:summary="Battery colors based on battery level"	>    
+
+		
+	<DJSeekBarPreference
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="depleted_levels_one"
+		android:title="Max Level One"
+		android:summary="Maximimum level for the color"
+		android:defaultValue="10" />	
+   
+    	
+	<DJSeekBarPreference
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="depleted_levels_two"
+		android:title="Max Level Two"
+		android:summary="Maximimum level for the color"
+		android:defaultValue="30" />	
+   
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+		android:title="B A T T E R Y   L E V E L S"
+		android:key="battery_color_ranges"
+		android:summary="Battery colors based on battery level"	>    
+ 
+	<DJSeekBarPreference
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="battery_levels_one"
+		android:title="Max Level One"
+		android:summary="Maximimum level for the color"
+		android:defaultValue="10" />	
+   
+	<DJSeekBarPreference
+	    android:layout="?android:attr/preferenceLayoutChild"
+		android:key="battery_levels_two"
+		android:title="Max Level Two"
+		android:summary="Maximimum level for the color"
+		android:defaultValue="30" />	
+   
+
+    </PreferenceCategory>		
+	
+
+</PreferenceScreen>

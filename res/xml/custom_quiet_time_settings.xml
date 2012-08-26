@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="Quiet Time"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+
+
+	<CheckBoxPreference 
+		android:key="quiet_time_on"
+		android:summaryOn="Daily is on"
+		android:summaryOff="Daily is off"
+		android:title="Daily" 
+		android:defaultValue="false"	/>
+	
+			
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_start_hour"
+		android:title="Start Hour" 
+		android:defaultValue="21"	/>
+		
+ 	<Preference 
+ 		android:layout="?android:attr/preferenceLayoutChild"
+	    android:dependency="quiet_time_on"
+		android:key="qt_stop_hour"
+		android:title="Stop Hour" 
+		android:defaultValue="7"	/>
+ 	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="quiet_time_on"
+		android:key="qt_led_on"
+		android:summaryOn="Notification Led is off"
+		android:summaryOff="Notification Led is on"
+		android:title="Turn Led Off" 
+		android:defaultValue="true"	/>   	
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="quiet_time_on"
+		android:key="qt_sound_on"
+		android:summaryOn="Notification Sound is off"
+		android:summaryOff="Notification Sound is on"
+		android:title="Turn Sound Off" 
+		android:defaultValue="true"	/>   					
+   				
+ 	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="quiet_time_on"
+		android:key="qt_vibrate_on"
+		android:summaryOn="Notification Vibrate is off"
+		android:summaryOff="Notification Vibrate is on"
+		android:title="Turn Vibrate Off" 
+		android:defaultValue="true"	/>   		   
+
+
+</PreferenceScreen>
+

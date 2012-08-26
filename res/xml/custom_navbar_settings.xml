@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+  	<PreferenceCategory
+		android:title="N A V I G A T I O N   B A R">
+
+		<DJSeekBarPreference	
+			android:layout="?android:attr/preferenceLayoutChild"
+   			android:key="nav_anim_speed"
+			android:title="Navigation Bar Glow Animation"
+			android:summary="Set to 0 to turn animatin off"
+			android:defaultValue="5" />		
+
+		
+		<DJSeekBarPreference	
+			android:layout="?android:attr/preferenceLayoutChild"
+   			android:key="nav_button_intens"
+			android:title="Navigation Bar Button Glow"
+			android:summary="Button icon itensity.  Glow effect is reduced with higher settings."
+			android:defaultValue="5" />		
+				
+				
+    </PreferenceCategory>
+
+   	
+   	<PreferenceCategory
+		android:title="P O R T R A I T   M O D E   B U T T O N S">
+	
+        <CheckBoxPreference
+        	android:layout="?android:attr/preferenceLayoutChild"
+			android:key="search_button"
+			android:title="Show search button"
+			android:defaultValue="false"	
+			 />
+			
+       <CheckBoxPreference
+       		android:layout="?android:attr/preferenceLayoutChild"
+			android:key="left_menu_button"
+			android:title="Left Menu Button"
+			android:defaultValue="true"	
+			/>
+		
+       <CheckBoxPreference
+       		android:layout="?android:attr/preferenceLayoutChild"
+			android:key="right_menu_button"
+			android:title="Right Menu Button"
+			android:defaultValue="true"			
+			/>	
+	
+	</PreferenceCategory>
+
+
+   	<PreferenceCategory
+		android:title="L A N D S C A P E   M O D E   B U T T O N S">
+	
+        <CheckBoxPreference
+        	android:layout="?android:attr/preferenceLayoutChild"
+			android:key="search_button_land"
+			android:title="Show search button"
+			android:defaultValue="false"
+			 />
+			
+       <CheckBoxPreference
+       		android:layout="?android:attr/preferenceLayoutChild"
+			android:key="top_menu_button_land"
+			android:title="Top Menu Button"
+			android:defaultValue="true"	
+			/>
+		
+       <CheckBoxPreference
+       		android:layout="?android:attr/preferenceLayoutChild"
+			android:key="bottom_menu_button_land"
+			android:title="Bottom Menu Button"
+			android:defaultValue="true"			
+			/>	
+	
+	</PreferenceCategory>
+
+
+
+
+
+</PreferenceScreen>

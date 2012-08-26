@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+   	
+   	android:title="@string/junk_settings_main"
+ 	xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
+
+
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="toggles_show_toggles"
+		android:summaryOn="Toggles are on"
+		android:summaryOff="Toggles are off"
+		android:title="Show Toggles" 
+		android:defaultValue="true"	/>
+ 
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="toggles_show_toggles"
+		android:key="toggles_top"
+		android:summaryOn="Toggles are on the top"
+		android:summaryOff="Toggles are on the bottom"
+		android:title="Toggles On Top" 
+		android:defaultValue="true"	/>
+
+   	<PreferenceScreen
+   		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="toggles_show_toggles"
+       	android:fragment="com.junk.settings.CustomToggleShowHideSettings"
+       	android:key="custom_toggle_show_hide_settings"
+       	android:title="Pick Toggles To Show" />
+    
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:dependency="toggles_show_toggles"
+		android:key="toggle_show_indicator"
+		android:summaryOn="Indicators are on"
+		android:summaryOff="Indicators are off"
+		android:title="Indicators" 
+		android:defaultValue="true"	/>
+
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="toggle_show_text"
+		android:dependency="toggles_show_toggles"
+		android:summaryOn="Text is on"
+		android:summaryOff="Text is off"
+		android:title="Text Label" 
+		android:defaultValue="true" />
+
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild"  
+		android:dependency="toggles_show_toggles"
+		android:key="toggle_show_divider"
+		android:summaryOn="Dividers are on"
+		android:summaryOff="Dividers are off"
+		android:title="Dividers" 
+		android:defaultValue="true"	/>
+
+
+</PreferenceScreen>
+
