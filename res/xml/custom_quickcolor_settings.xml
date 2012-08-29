@@ -185,7 +185,13 @@
 		android:layout="?android:attr/preferenceLayoutChild" 
 		android:key="qk_nav_button_glow_color"
 		android:title="Navigation Button Glow" 
-		android:defaultValue="false"	/>				
+		android:defaultValue="false"	/>		
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_nav_lightsout_color"
+		android:title="Navigation Lights Out" 
+		android:defaultValue="false"	/>			
 
     </PreferenceCategory>
   

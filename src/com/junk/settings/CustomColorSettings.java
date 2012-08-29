@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -67,6 +68,7 @@ public class CustomColorSettings extends PreferenceFragment implements
 	private final String NAV_BAR_COLOR = "nav_bar_color";
     private final String NAV_BAR_BUTTON_COLOR = "nav_button_color";
     private final String NAV_BAR_GLOW_COLOR = "nav_button_glow_color";
+    private final String NAV_BAR_LIGHTSOUT_COLOR = "nav_lightsout_color";
 
     
     //Pulldown
@@ -129,6 +131,7 @@ public class CustomColorSettings extends PreferenceFragment implements
 	private Preference mNavBarColor;
 	private Preference mNavBarButtonColor;
 	private Preference mNavBarGlowColor;
+	private Preference mNavLightsoutColor;
 
     private Preference mCarrierColor;
     private Preference mBatteryColor;
@@ -215,6 +218,8 @@ public class CustomColorSettings extends PreferenceFragment implements
         mNavBarButtonColor.setOnPreferenceChangeListener(this);
         mNavBarGlowColor = (ColorPickerPreference) findPreference(NAV_BAR_GLOW_COLOR);
         mNavBarGlowColor.setOnPreferenceChangeListener(this);
+        mNavLightsoutColor = (ColorPickerPreference) findPreference(NAV_BAR_LIGHTSOUT_COLOR);
+        mNavLightsoutColor.setOnPreferenceChangeListener(this);
 		mCarrierColor = (Preference) findPreference(CARRIER_COLOR);
 		mCarrierColor.setOnPreferenceChangeListener(this);        
 	    mBatteryColor = (Preference) findPreference(BATTERY_LABEL_COLOR);
@@ -430,7 +435,15 @@ public class CustomColorSettings extends PreferenceFragment implements
        	i.putExtra(NAV_BAR_GLOW_COLOR, (Integer) objValue);
        	getActivity().sendBroadcast(i);
        	i = null;           	   	
-       	   	
+ 
+    } else if (NAV_BAR_LIGHTSOUT_COLOR.equals(key)) {
+       	Intent i = new Intent();
+       	i.setAction(Junk_NavBar_Settings );
+       	i.putExtra(NAV_BAR_LIGHTSOUT_COLOR, (Integer) objValue);
+       	getActivity().sendBroadcast(i);
+       	i = null;           	   	
+       	
+       	
     } else if (BATTERY_LABEL_COLOR.equals(key)) {
     	Intent i = new Intent();
         i.setAction(Junk_Pulldown_Settings );

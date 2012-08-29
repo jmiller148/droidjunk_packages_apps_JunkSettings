@@ -183,8 +183,7 @@
 		<ColorPickerPreference
 			android:key="nav_bar_color"
 			android:title="Navigation Bar Color"
-			android:defaultValue="#ff000000"
-			/>  	    
+			android:defaultValue="#ff000000" />  	    
  	    
 		<ColorPickerPreference
 			android:key="nav_button_color"
@@ -194,9 +193,13 @@
 		<ColorPickerPreference
 			android:key="nav_button_glow_color"
 			android:title="Navigation Button Glow Color"
-			android:defaultValue="#ffffffff"
-			/>		
+			android:defaultValue="#ffffffff" />		
 
+		<ColorPickerPreference
+			android:key="nav_lightsout_color"
+			android:title="Navigation Lights Out Color"
+			android:defaultValue="#80ffffff"
+			alphaSlider="true" />		
 
 
     </PreferenceCategory>

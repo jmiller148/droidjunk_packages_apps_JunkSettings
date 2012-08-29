@@ -84,9 +84,11 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 	private final String QK_NAV_BAR_COLOR = "qk_nav_bar_color";
     private final String QK_NAV_BAR_BUTTON_COLOR = "qk_nav_button_color";
     private final String QK_NAV_BAR_GLOW_COLOR = "qk_nav_button_glow_color";
+    private final String QK_NAV_BAR_LIGHTSOUT_COLOR = "qk_nav_lightsout_color";
 	private final String NAV_BAR_COLOR = "nav_bar_color";
     private final String NAV_BAR_BUTTON_COLOR = "nav_button_color";
     private final String NAV_BAR_GLOW_COLOR = "nav_button_glow_color";
+    private final String NAV_BAR_LIGHTSOUT_COLOR = "nav_lightsout_color";
 
 
     
@@ -182,6 +184,7 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
     private CheckBoxPreference mNavBarColor;
     private CheckBoxPreference mNavBarButtonColor;
     private CheckBoxPreference mNavBarGlowColor;
+    private CheckBoxPreference mNavLightsoutColor;
 
     //Pulldown
 	private CheckBoxPreference mHeaderBar;
@@ -189,7 +192,6 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 	private CheckBoxPreference mHeaderDate;
 	private CheckBoxPreference mHeaderButton;
     private CheckBoxPreference mShadeColor;
-//    private CheckBoxPreference mNotifIconColor;
     private CheckBoxPreference mNotifIconBgColor;
     private CheckBoxPreference mNotifTextColor;
     private CheckBoxPreference mNotifTextBgColor;
@@ -271,6 +273,8 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
         mNavBarButtonColor.setOnPreferenceChangeListener(this);
         mNavBarGlowColor = (CheckBoxPreference) findPreference(QK_NAV_BAR_GLOW_COLOR);
         mNavBarGlowColor.setOnPreferenceChangeListener(this);
+        mNavLightsoutColor = (CheckBoxPreference) findPreference(QK_NAV_BAR_LIGHTSOUT_COLOR);
+        mNavLightsoutColor.setOnPreferenceChangeListener(this);
 		mCarrierColor = (CheckBoxPreference) findPreference(QK_CARRIER_COLOR);
 		mCarrierColor.setOnPreferenceChangeListener(this);        
 	    mBatteryColor = (CheckBoxPreference) findPreference(QK_BATTERY_LABEL_COLOR);
@@ -623,7 +627,20 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
        	   	getActivity().sendBroadcast(i);
        	   	i = null; 		
   		}   		
-  		
+
+  		if (mNavLightsoutColor.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(NAV_BAR_LIGHTSOUT_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_NavBar_Settings );
+       	   	i.putExtra(NAV_BAR_LIGHTSOUT_COLOR, (Integer) objValue);
+       	   	getActivity().sendBroadcast(i);
+       	   	i = null; 		
+  		}   		
   		
   		if (mBatteryColor.isChecked()) {
   			
@@ -1025,6 +1042,7 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 	    mNavBarColor.setChecked(false);
 	    mNavBarButtonColor.setChecked(false);
 	    mNavBarGlowColor.setChecked(false);
+	    mNavLightsoutColor.setChecked(false);
 		mCarrierColor.setChecked(false);
 	    mBatteryColor.setChecked(false);
 	    mTempColor.setChecked(false);
@@ -1034,7 +1052,6 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
     	mHeaderDate.setChecked(false);
     	mHeaderButton.setChecked(false);
         mShadeColor.setChecked(false);
-        //mNotifIconColor.setChecked(false);
         mNotifIconBgColor.setChecked(false);
         mNotifTextColor.setChecked(false);
         mNotifTextBgColor.setChecked(false);
