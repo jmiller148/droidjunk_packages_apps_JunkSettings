@@ -23,14 +23,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.ColorPickerPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.CheckBoxPreference;
-import android.util.Log;
 
 
 
@@ -39,12 +36,12 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 
 	private final String QK_COLOR = "qk_color";
 	private final String QK_CLEAR_ALL = "qk_clear_all";
-	
+
 	//Icons - Signal/Wifi
 	private final String Junk_Icon_Settings = "JUNK_ICON_SETTINGS";
 	private final String QK_ICON_COLOR = "qk_icon_color";
 	private final String ICON_COLOR = "icon_color";
-	
+
 	// Battery
     private final String Junk_Battery_Settings = "JUNK_BATTERY_SETTINGS";
 	private final String QK_BATTERY_CIRCLE_COLOR_ONE = "qk_battery_circle_color_one";
@@ -80,8 +77,8 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 	private final String CHARGING_LEVEL_COLOR_ONE = "charge_levels_color_one";
 	private final String CHARGING_LEVEL_COLOR_TWO = "charge_levels_color_two";
 	private final String CHARGING_LEVEL_COLOR_THREE = "charge_levels_color_three";    
-	
-	
+
+
 	//Navbar
 	private final String Junk_NavBar_Settings = "JUNK_NAVBAR_SETTINGS";
 	private final String QK_NAV_BAR_COLOR = "qk_nav_bar_color";
@@ -95,34 +92,32 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
     
     //Pulldown
     private final String Junk_Pulldown_Settings = "JUNK_PULLDOWN_SETTINGS";
-	private final String QK_BATTERY_LABEL_COLOR = "qk_battery_label_color";
+	private final String QK_HEADER_BAR_COLOR = "qk_header_bar_color";
+	private final String QK_HEADER_CLOCK_COLOR = "qk_header_clock_color";
+	private final String QK_HEADER_DATE_COLOR = "qk_header_date_color";
+	private final String QK_HEADER_BUTTON_COLOR = "qk_header_button_color";
+    private final String QK_BATTERY_LABEL_COLOR = "qk_battery_label_color";
 	private final String QK_TEMP_LABEL_COLOR = "qk_temp_label_color";
 	private final String QK_CARRIER_COLOR = "qk_carrier_color";
-	private final String QK_DATE_COLOR = "qk_date_color";
-	private final String QK_DATE_BAR_COLOR = "qk_date_bar_color";
+	private final String HEADER_BAR_COLOR = "header_bar_color";
+	private final String HEADER_CLOCK_COLOR = "header_clock_color";
+	private final String HEADER_DATE_COLOR = "header_date_color";
+	private final String HEADER_BUTTON_COLOR = "header_button_color";
 	private final String BATTERY_LABEL_COLOR = "battery_label_color";
 	private final String TEMP_LABEL_COLOR = "temp_label_color";
 	private final String CARRIER_COLOR = "carrier_color";
-	private final String DATE_COLOR = "date_color";
-	private final String DATE_BAR_COLOR = "date_bar_color";
 
-	
-	private final String QK_CLEAR_BUTTON_COLOR = "qk_clear_button_color";
-	private final String QK_CLEAR_BUTTON_TEXT_COLOR = "qk_clear_button_text_color";
+
+
+
 	private final String QK_PD_HANDLE_COLOR = "qk_pd_handle_color";
 	private final String QK_PD_SHADE_COLOR = "qk_pd_shade_color";
-	private final String QK_PD_GRIP_COLOR = "qk_pd_grip_color";
-	private final String QK_PD_CARRIER_FRAME_COLOR = "qk_pd_carrier_frame_color";
 //	private final String QK_PD_NOTIF_ICON_COLOR = "qk_pd_notif_icon_color";
 	private final String QK_PD_NOTIF_ICON_BG_COLOR = "qk_pd_notif_icon_bg_color";
 	private final String QK_PD_NOTIF_TEXT_COLOR = "qk_pd_notif_text_color";
 	private final String QK_PD_NOTIF_TEXT_BG_COLOR = "qk_pd_notif_text_bg_color";
-	private final String CLEAR_BUTTON_TEXT_COLOR = "clear_button_text_color";
-	private final String CLEAR_BUTTON_COLOR = "clear_button_color";
 	private final String PD_HANDLE_COLOR = "pd_handle_color";
 	private final String PD_SHADE_COLOR = "pd_shade_color";
-	private final String PD_GRIP_COLOR = "pd_grip_color";
-	private final String PD_CARRIER_FRAME_COLOR = "pd_carrier_frame_color";
 //	private final String PD_NOTIF_ICON_COLOR = "pd_notif_icon_color";
 	private final String PD_NOTIF_ICON_BG_COLOR = "pd_notif_icon_bg_color";
 	private final String PD_NOTIF_TEXT_COLOR = "pd_notif_text_color";
@@ -132,7 +127,7 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 	private final String Junk_Clock_Settings = "JUNK_CLOCK_SETTINGS";
 	private final String QK_CLOCK_COLOR = "qk_clock_color";
 	private final String CLOCK_COLOR = "clock_color";
-	
+
 	//Toggles
 	private final String Junk_Toggle_Settings = "JUNK_TOGGLE_SETTINGS";
 	private final String TOGGLES_UPDATE = "toggles_update";
@@ -162,10 +157,10 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 
 	private Preference mQkColor;
 	private Preference mQkClearAll;
-	
+
 	//Icons - Signal/Wifi
 	private CheckBoxPreference mIconColor;
-	
+
 	// Battery
     private CheckBoxPreference mBatteryCircleColorOne;
     private CheckBoxPreference mBatteryCircleColorTwo;
@@ -189,22 +184,19 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
     private CheckBoxPreference mNavBarGlowColor;
 
     //Pulldown
-    private CheckBoxPreference mDateBarColor;
+	private CheckBoxPreference mHeaderBar;
+	private CheckBoxPreference mHeaderClock;
+	private CheckBoxPreference mHeaderDate;
+	private CheckBoxPreference mHeaderButton;
     private CheckBoxPreference mShadeColor;
-    private CheckBoxPreference mGripColor;
-    private CheckBoxPreference mCarrierFrameColor;
 //    private CheckBoxPreference mNotifIconColor;
     private CheckBoxPreference mNotifIconBgColor;
     private CheckBoxPreference mNotifTextColor;
     private CheckBoxPreference mNotifTextBgColor;
-
     private CheckBoxPreference mCarrierColor;
     private CheckBoxPreference mBatteryColor;
     private CheckBoxPreference mTempColor;
-    private CheckBoxPreference mDateColor;
     private CheckBoxPreference mCloseBarColor;
-    private CheckBoxPreference mClearButtonColor;
-    private CheckBoxPreference mClearButtonTextColor;
 
 	//Clock
     private CheckBoxPreference mClockColor;
@@ -220,9 +212,9 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
     private CheckBoxPreference mToggleTextOffColor;
     private CheckBoxPreference mToggleDividerColor;
 
-	
-	
-	
+
+
+
     /** If there is no setting in the provider, use this. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -285,22 +277,18 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 		mBatteryColor.setOnPreferenceChangeListener(this);
 	    mTempColor = (CheckBoxPreference) findPreference(QK_TEMP_LABEL_COLOR);
 		mTempColor.setOnPreferenceChangeListener(this);
-        mDateColor = (CheckBoxPreference) findPreference(QK_DATE_COLOR);
-        mDateColor.setOnPreferenceChangeListener(this);
-        mDateBarColor = (CheckBoxPreference) findPreference(QK_DATE_BAR_COLOR);
-		mDateBarColor.setOnPreferenceChangeListener(this);
         mCloseBarColor = (CheckBoxPreference) findPreference(QK_PD_HANDLE_COLOR);
 		mCloseBarColor.setOnPreferenceChangeListener(this);
-        mClearButtonColor = (CheckBoxPreference) findPreference(QK_CLEAR_BUTTON_COLOR);
-		mClearButtonColor.setOnPreferenceChangeListener(this);
-        mClearButtonTextColor = (CheckBoxPreference) findPreference(QK_CLEAR_BUTTON_TEXT_COLOR);
-		mClearButtonTextColor.setOnPreferenceChangeListener(this);
+    	mHeaderBar = (CheckBoxPreference) findPreference(QK_HEADER_BAR_COLOR);
+    	mHeaderBar.setOnPreferenceChangeListener(this);
+    	mHeaderClock = (CheckBoxPreference) findPreference(QK_HEADER_CLOCK_COLOR);
+    	mHeaderClock.setOnPreferenceChangeListener(this);
+    	mHeaderDate = (CheckBoxPreference) findPreference(QK_HEADER_DATE_COLOR);
+    	mHeaderDate.setOnPreferenceChangeListener(this);
+    	mHeaderButton = (CheckBoxPreference) findPreference(QK_HEADER_BUTTON_COLOR);
+    	mHeaderButton.setOnPreferenceChangeListener(this);
         mShadeColor = (CheckBoxPreference) findPreference(QK_PD_SHADE_COLOR);
 		mShadeColor.setOnPreferenceChangeListener(this);        
-        mGripColor = (CheckBoxPreference) findPreference(QK_PD_GRIP_COLOR);
-		mGripColor.setOnPreferenceChangeListener(this);        
-        mCarrierFrameColor = (CheckBoxPreference) findPreference(QK_PD_CARRIER_FRAME_COLOR);
-		mCarrierFrameColor.setOnPreferenceChangeListener(this);        
 //      mNotifIconColor = (Preference) findPreference(QK_PD_NOTIF_ICON_COLOR);
 //		mNotifIconColor.setOnPreferenceChangeListener(this);        
         mNotifIconBgColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_ICON_BG_COLOR);
@@ -593,7 +581,7 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
             getActivity().sendBroadcast(i);
             i = null;  			
   		} 		
-	
+
   		if (mNavBarColor.isChecked()) {
   			
         	sharedPref = prefMgr.getSharedPreferences();
@@ -679,54 +667,6 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
             i.putExtra(CARRIER_COLOR, (Integer) objValue);
             getActivity().sendBroadcast(i);
             i = null;
-     		
-  		}
-
-  		if (mDateColor.isChecked()) {
-  			
-        	sharedPref = prefMgr.getSharedPreferences();
-        	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(DATE_COLOR, (Integer) objValue);
-            editor.commit();
-  			
-        	Intent i = new Intent();
-        	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(DATE_COLOR, (Integer) objValue);
-        	getActivity().sendBroadcast(i);
-        	i = null;        
-     		
-  		}
-  		
-
-  		if (mDateColor.isChecked()) {
-      			
-           	sharedPref = prefMgr.getSharedPreferences();
-           	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(DATE_COLOR, (Integer) objValue);
-            editor.commit();
-      			
-           	Intent i = new Intent();
-           	i.setAction(Junk_Pulldown_Settings );
-           	i.putExtra(DATE_COLOR, (Integer) objValue);
-           	getActivity().sendBroadcast(i);
-           	i = null;        
-         		
-   		}
-        	
-        	
-  		if (mDateBarColor.isChecked()) {
-  			
-        	sharedPref = prefMgr.getSharedPreferences();
-        	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(DATE_BAR_COLOR, (Integer) objValue);
-            editor.commit();
-  			
-        	Intent i = new Intent();
-        	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(DATE_BAR_COLOR, (Integer) objValue);
-        	getActivity().sendBroadcast(i);
-        	i = null;        
-
      		
   		}
 
@@ -900,7 +840,7 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
             i.putExtra(TOGGLES_UPDATE, true);
             getActivity().sendBroadcast(i);
             i = null;
-       }
+        }
   		
   		if (mClockColor.isChecked()) {
   			
@@ -914,35 +854,7 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
         	i.putExtra(CLOCK_COLOR, (Integer) objValue);
         	getActivity().sendBroadcast(i);
         	i = null;      
-       }  		
-  		
-  		if (mClearButtonColor.isChecked()) {
-  			
-        	sharedPref = prefMgr.getSharedPreferences();
-        	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(CLEAR_BUTTON_COLOR, (Integer) objValue);
-            editor.commit();
-  			
-        	Intent i = new Intent();
-        	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(CLEAR_BUTTON_COLOR, (Integer) objValue);
-        	getActivity().sendBroadcast(i);
-        	i = null;      
-       }
-
-  		if (mClearButtonTextColor.isChecked()) {
-  			
-        	sharedPref = prefMgr.getSharedPreferences();
-        	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(CLEAR_BUTTON_TEXT_COLOR, (Integer) objValue);
-            editor.commit();
-  			
-        	Intent i = new Intent();
-        	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(CLEAR_BUTTON_TEXT_COLOR, (Integer) objValue);
-        	getActivity().sendBroadcast(i);
-        	i = null;      
-       }  		
+        }  		
   		
   		if (mCloseBarColor.isChecked()) {
   			
@@ -956,7 +868,63 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
         	i.putExtra(PD_HANDLE_COLOR, (Integer) objValue);
         	getActivity().sendBroadcast(i);
         	i = null;              	
-       }
+        }
+  		
+  		if (mHeaderBar.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(HEADER_BAR_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(HEADER_BAR_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+        } 
+  
+  		if (mHeaderClock.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(HEADER_CLOCK_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(HEADER_CLOCK_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+        }  
+  		
+  		if (mHeaderDate.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(HEADER_DATE_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(HEADER_DATE_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+        }   		
+
+  		if (mHeaderButton.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(HEADER_BUTTON_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(HEADER_BUTTON_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+        }   		
   		
   		if (mShadeColor.isChecked()) {
   			
@@ -970,35 +938,8 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
         	i.putExtra(PD_SHADE_COLOR, (Integer) objValue);
         	getActivity().sendBroadcast(i);
         	i = null;              	
-       }  		
+        }  		
 
-  		if (mGripColor.isChecked()) {
-  			
-        	sharedPref = prefMgr.getSharedPreferences();
-        	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(PD_GRIP_COLOR, (Integer) objValue);
-            editor.commit();
-  			
-        	Intent i = new Intent();
-        	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(PD_GRIP_COLOR, (Integer) objValue);
-        	getActivity().sendBroadcast(i);
-        	i = null;              	
-       }  		
-  		
-  		if (mCarrierFrameColor.isChecked()) {
-  			
-        	sharedPref = prefMgr.getSharedPreferences();
-        	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(PD_CARRIER_FRAME_COLOR, (Integer) objValue);
-            editor.commit();
-  			
-        	Intent i = new Intent();
-        	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(PD_CARRIER_FRAME_COLOR, (Integer) objValue);
-        	getActivity().sendBroadcast(i);
-        	i = null;              	
-       }  		
   		
 /*  		if (mNotifIconColor.isChecked()) {
   			
@@ -1087,15 +1028,12 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 		mCarrierColor.setChecked(false);
 	    mBatteryColor.setChecked(false);
 	    mTempColor.setChecked(false);
-        mDateColor.setChecked(false);
         mCloseBarColor.setChecked(false);
-        mClearButtonColor.setChecked(false);
-        mClearButtonTextColor.setChecked(false);
-        mDateBarColor.setChecked(false);
-        mDateBarColor.setChecked(false);
+    	mHeaderBar.setChecked(false);
+    	mHeaderClock.setChecked(false);
+    	mHeaderDate.setChecked(false);
+    	mHeaderButton.setChecked(false);
         mShadeColor.setChecked(false);
-        mGripColor.setChecked(false);
-        mCarrierFrameColor.setChecked(false);
         //mNotifIconColor.setChecked(false);
         mNotifIconBgColor.setChecked(false);
         mNotifTextColor.setChecked(false);
