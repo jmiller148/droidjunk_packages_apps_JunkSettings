@@ -31,7 +31,7 @@
 <int name="pd_shade_color" value="-1124073472" />
 <boolean name="toggles_show_data" value="true" />
 <int name="toggle_text_off_color" value="-9079435" />
-<string name="battery_icon_num">2</string>
+<int name="battery_icon_num" value="2" />
 <int name="clear_button_color" value="-16762625" />
 <boolean name="toggles_show_rotate" value="true" />
 <boolean name="toggle_show_indicator" value="true" />

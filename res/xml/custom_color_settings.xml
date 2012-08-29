@@ -236,7 +236,7 @@
 		android:key="pd_notif_text_color"
 		android:title="Text Color"
 		android:summary="Notification text color (reboot required)"
-		android:defaultValue="#ffffffff" 
+		android:defaultValue="#fff6f6f6" 
 		alphaSlider="false" /> 		
  	
  	
@@ -255,38 +255,37 @@
 		android:title="S T A T U S B A R   P U L L D O W N"
 		android:key="quickcolor_pulldown">
    				
-		<ColorPickerPreference
-			android:layout="?android:attr/preferenceLayoutChild"
-			android:key="date_color"
-			android:title="Date Color"
-			android:summary="Color for statusbar date"	
-			android:defaultValue="#ff3792b4" 
-			alphaSlider="false" /> 		
-        
 	 	<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
-			android:key="date_bar_color"
-			android:title="Date Bar Color"
-			android:summary="Color for the date bar"
-			android:defaultValue="#ffffffff" 	
-			alphaSlider="true" /> 	        
-				
-		
+			android:key="header_bar_color"
+			android:title="Header Bar Color"
+			android:summary="Color for the header bar"
+			android:defaultValue="#ff000000" 	
+			alphaSlider="false" /> 	            
+
+		<ColorPickerPreference
+			android:layout="?android:attr/preferenceLayoutChild"
+			android:key="header_clock_color"
+			android:title="Header Clock Color"
+			android:summary="Color for header clock"	
+			android:defaultValue="#ffffffff" 
+			alphaSlider="false" /> 	 	
+
+		<ColorPickerPreference
+			android:layout="?android:attr/preferenceLayoutChild"
+			android:key="header_date_color"
+			android:title="Header Date Color"
+			android:summary="Color for header date"	
+			android:defaultValue="#ffffffff" 
+			alphaSlider="false" /> 		
+
         <ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
-			android:key="clear_button_color"
-			android:title="Clear All Button Color"
-			android:summary="Color for clear all button (reboot required)"
-			android:defaultValue="#ff3792b4" 
+			android:key="header_button_color"
+			android:title="Header Buttons Color"
+			android:summary="Color for header buttons"
+			android:defaultValue="#ffffffff" 
 			alphaSlider="false" /> 	
-			
-        <ColorPickerPreference
-			android:layout="?android:attr/preferenceLayoutChild"
-			android:key="clear_button_text_color"
-			android:title="Clear All Button Text Color"
-			android:summary="Color for clear all button text (reboot required)"
-			android:defaultValue="#ff3792b4" 
-			alphaSlider="false" /> 	        
 
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
@@ -303,15 +302,7 @@
 			android:summary="Color for statusbar pulldown handle"
 			android:defaultValue="#ff3792b4" 
 			alphaSlider="true" /> 	
-		
-		<ColorPickerPreference
-			android:layout="?android:attr/preferenceLayoutChild"
-			android:key="pd_grip_color"
-			android:title="Pulldown Grip Color"
-			android:summary="Color for statusbar pulldown grip"
-			android:defaultValue="#ff000000" 
-			alphaSlider="true" /> 			
-        
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="carrier_color"
@@ -322,21 +313,12 @@
 
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
-			android:key="pd_carrier_frame_color"
-			android:title="Carrier Bar Color"
-			android:summary="Color for carrier bar"
-			android:defaultValue="#ff3792b4" 
-			alphaSlider="true" /> 		
-				
-					
-		<ColorPickerPreference
-			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="battery_label_color"
 			android:title="Battery Level Color"
 			android:summary="Color for the battery level"
 			android:defaultValue="#ff3792b4" 
 			alphaSlider="false" /> 
-			
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="temp_label_color"

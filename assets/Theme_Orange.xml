@@ -32,7 +32,7 @@
 <int name="toggle_text_off_color" value="-9079435" />
 <boolean name="toggles_show_data" value="true" />
 <int name="clear_button_color" value="-35328" />
-<string name="battery_icon_num">2</string>
+<int name="battery_icon_num" value="2" />
 <boolean name="toggles_show_rotate" value="true" />
 <boolean name="toggle_show_indicator" value="true" />
 <boolean name="bottom_menu_button_land" value="true" />
