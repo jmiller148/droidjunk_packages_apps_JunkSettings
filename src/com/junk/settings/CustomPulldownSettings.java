@@ -39,9 +39,21 @@ public class CustomPulldownSettings extends PreferenceFragment implements
 	private final String CARRIER_CUSTOM = "carrier_custom";
 	private final String CARRIER_CUSTOM_TEXT = "carrier_custom_text";
 	private final String CARRIER_SIZE = "carrier_size";
-	private final String DATE_SIZE = "date_size";
+	private final String HEADER_CLOCK_SHOW = "header_clock_show";
+	private final String HEADER_CLOCK_SIZE = "header_clock_size";
+	private final String HEADER_DATE_SHOW = "header_date_show";
+	private final String HEADER_DATE_SIZE = "header_date_size";
     
 	private PreferenceManager prefMgr;
+
+	// Header
+	private CheckBoxPreference mHeaderClockShow;
+	private CheckBoxPreference mHeaderDateShow;
+    private DJSeekBarPreference mHeaderClockSize;
+    private DJSeekBarPreference mHeaderDateSize;
+    public int headerClockSize = 35;
+    public int headerDateSize = 10;
+
 	private CheckBoxPreference mShowCarrier;
 	private CheckBoxPreference mShowBattery;
 	private CheckBoxPreference mShowTemp;
@@ -54,8 +66,8 @@ public class CustomPulldownSettings extends PreferenceFragment implements
     public int carrierSize = 15;
     public int batterySize = 12;
     public int tempSize = 12;
-    private DJSeekBarPreference mDateSize;
-    public int dateSize = 17;
+    
+    
     
     
     /** If there is no setting in the provider, use this. */
@@ -69,6 +81,23 @@ public class CustomPulldownSettings extends PreferenceFragment implements
         prefMgr.getSharedPreferences();
        
         addPreferencesFromResource(R.xml.custom_pulldown_settings);
+        
+		mHeaderClockShow = (CheckBoxPreference) findPreference(HEADER_CLOCK_SHOW);
+		mHeaderClockShow.setOnPreferenceChangeListener(this);
+		mHeaderClockSize = (DJSeekBarPreference) findPreference(HEADER_CLOCK_SIZE);
+		mHeaderClockSize.setOnPreferenceChangeListener(this);
+		headerClockSize = prefMgr.getSharedPreferences().getInt(HEADER_CLOCK_SIZE, headerClockSize);  
+		mHeaderClockSize.setMin(10);
+		mHeaderClockSize.setMax(40);
+		mHeaderClockSize.setProgress(headerClockSize);
+		mHeaderDateShow = (CheckBoxPreference) findPreference(HEADER_DATE_SHOW);
+		mHeaderDateShow.setOnPreferenceChangeListener(this);
+        mHeaderDateSize = (DJSeekBarPreference) findPreference(HEADER_DATE_SIZE);
+		mHeaderDateSize.setOnPreferenceChangeListener(this);
+		headerDateSize = prefMgr.getSharedPreferences().getInt(HEADER_DATE_SIZE, headerDateSize);  
+		mHeaderDateSize.setMin(10);
+		mHeaderDateSize.setMax(18);
+		mHeaderDateSize.setProgress(headerDateSize);
         
         mShowCarrier = (CheckBoxPreference) findPreference(SHOW_CARRIER);
 		mShowCarrier.setOnPreferenceChangeListener(this);
@@ -98,15 +127,6 @@ public class CustomPulldownSettings extends PreferenceFragment implements
 		mCarrierSize.setMin(5);
 		mCarrierSize.setMax(25);
 		mCarrierSize.setProgress(carrierSize);
-		mDateSize = (DJSeekBarPreference) findPreference(DATE_SIZE);
-		mDateSize.setOnPreferenceChangeListener(this);
-		dateSize = prefMgr.getSharedPreferences().getInt(DATE_SIZE, dateSize);  
-		mDateSize.setMin(5);
-		mDateSize.setMax(25);
-		mDateSize.setProgress(dateSize);
-
-		
-		
     }
 
     
@@ -133,7 +153,38 @@ public class CustomPulldownSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
   
      	final String key = preference.getKey();
-        if (SHOW_CARRIER.equals(key)) {
+     	
+    	if (HEADER_CLOCK_SHOW.equals(key)) {
+    		Intent i = new Intent();
+    		i.setAction(Junk_Pulldown_Settings );
+    		i.putExtra(HEADER_CLOCK_SHOW, (Boolean) objValue);
+    		getActivity().sendBroadcast(i);
+    		i = null;
+
+    	} else if (HEADER_CLOCK_SIZE.equals(key)) {
+    		headerClockSize = (Integer) objValue + 10;
+    		Intent i = new Intent();
+    		i.setAction(Junk_Pulldown_Settings );
+    		i.putExtra(HEADER_CLOCK_SIZE, (Integer) headerClockSize);
+    		getActivity().sendBroadcast(i);
+    		i = null;
+    		
+    	} else if (HEADER_DATE_SHOW.equals(key)) {
+    		Intent i = new Intent();
+    		i.setAction(Junk_Pulldown_Settings );
+    		i.putExtra(HEADER_DATE_SHOW, (Boolean) objValue);
+    		getActivity().sendBroadcast(i);
+    		i = null;
+    		
+    	} else if (HEADER_DATE_SIZE.equals(key)) {
+    		headerDateSize = (Integer) objValue + 10;
+    		Intent i = new Intent();
+    		i.setAction(Junk_Pulldown_Settings );
+    		i.putExtra(HEADER_DATE_SIZE, (Integer) headerDateSize);
+    		getActivity().sendBroadcast(i);
+    		i = null;
+
+    	} else if (SHOW_CARRIER.equals(key)) {
         	Intent i = new Intent();
         	i.setAction(Junk_Pulldown_Settings );
        	   	i.putExtra(SHOW_CARRIER, (Boolean) objValue);
@@ -192,13 +243,6 @@ public class CustomPulldownSettings extends PreferenceFragment implements
             getActivity().sendBroadcast(i);
             i = null;
         	
-        } else if (DATE_SIZE.equals(key)) {
-        	dateSize = (Integer) objValue + 5;
-        	Intent i = new Intent();
-            i.setAction(Junk_Pulldown_Settings );
-            i.putExtra(DATE_SIZE, (Integer) dateSize);
-            getActivity().sendBroadcast(i);
-            i = null;
         	
         }
         

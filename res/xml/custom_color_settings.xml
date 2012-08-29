@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 
+
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="Quick Colors"
 	>
@@ -26,11 +27,11 @@
 			android:layout="?android:attr/preferenceLayoutChild" 
 			android:key="icon_color"
 			android:title="Statusbar Signal Icons Color"
-			android:defaultValue="#ff3fa2c7" 
+			android:defaultValue="#ff33b5e5" 
 			alphaSlider="false" /> 			
 
     </PreferenceCategory>		
-		
+
     <PreferenceCategory
 		android:title="B A T T E R Y   I C O N S"
 		android:key="quickcolor_battery">		
@@ -56,7 +57,7 @@
 			android:key="battery_levels_color_three"
 			android:title="Battery Level Three Color"
 			android:summary="Color for Min Level Three"
-			android:defaultValue="#ff3fa2c7" 
+			android:defaultValue="#ff33b5e5" 
 			alphaSlider="false" />			        
         		
 		<ColorPickerPreference
@@ -66,7 +67,7 @@
 			android:summary="Color assigned from Max Level One down to 0"
 			android:defaultValue="#ff800000" 
 			alphaSlider="false" />
-		
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild" 
 			android:key="depleted_levels_color_two"
@@ -74,7 +75,7 @@
 			android:summary="Color assigned from Max Level Two down to Max Level One"
 			android:defaultValue="#ffba6900" 
 			alphaSlider="false" />	
-		
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild" 
 			android:key="depleted_levels_color_three"
@@ -82,10 +83,10 @@
 			android:summary="Color assigned from 100 down to Max Level Two"
 			android:defaultValue="#ff296c85" 
 			alphaSlider="false" />		
-				
-						
-	
-			
+
+
+
+
     </PreferenceCategory>        
         
     <PreferenceCategory
@@ -99,7 +100,7 @@
 			android:summary="Color of the battery circle or square"
 			android:defaultValue="#ffff0000" 
 			alphaSlider="true" />	
-			
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild" 
 			android:key="battery_circle_color_two"
@@ -107,15 +108,15 @@
 			android:summary="Color of the battery circle or square"
 			android:defaultValue="#ffff9000" 
 			alphaSlider="true" />		
-			
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild" 
 			android:key="battery_circle_color_three"
 			android:title="Circle/Square Color Level Three"
 			android:summary="Color of the battery circle or square"
-			android:defaultValue="#ff3fa2c7" 
+			android:defaultValue="#ff33b5e5" 
 			alphaSlider="true" />				
-		
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild" 
 			android:key="battery_number_color_one"
@@ -137,7 +138,7 @@
 			android:key="battery_number_color_three"
 			android:title="Number Color Level Three"
 			android:summary="Color of the battery number"
-			android:defaultValue="#ff3fa2c7" 
+			android:defaultValue="#ff33b5e5" 
 			alphaSlider="true" />	
 
     </PreferenceCategory>      						
@@ -171,7 +172,7 @@
 			android:summary="Color for Min Level Three"
 			android:defaultValue="#ff3792b4" 
 			alphaSlider="false" />				
-			
+
     </PreferenceCategory>    
     
     
@@ -195,9 +196,9 @@
 			android:title="Navigation Button Glow Color"
 			android:defaultValue="#ffffffff"
 			/>		
-		
 
-		 
+
+
     </PreferenceCategory>
   
 
@@ -206,13 +207,13 @@
 	<PreferenceCategory
 		android:title="C L O C K"
 		android:key="quickcolor_clock">
-	
+
    		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="clock_color"
 			android:title="Clock Color"
 			android:summary="Color for statusbar clock"
-			android:defaultValue="#ff3792b4" 
+			android:defaultValue="#ff33b5e5" 
 			alphaSlider="false" /> 
  
     </PreferenceCategory>
@@ -228,7 +229,7 @@
 		android:key="pd_notif_icon_bg_color"
 		android:title="Icon Background Color"
 		android:summary="Background color for the notification icon (reboot required)"
-		android:defaultValue="#ff000000" 
+		android:defaultValue="#ff0e303d" 
 		alphaSlider="false" /> 		
         
 	<ColorPickerPreference
@@ -245,16 +246,16 @@
 		android:key="pd_notif_text_bg_color"
 		android:title="Text Background Color"
 		android:summary="Background color for the notification text (reboot required)"
-		android:defaultValue="#ff000000" 
+		android:defaultValue="#ff154557" 
 		alphaSlider="false" /> 		
 
     </PreferenceCategory>
-		
+
         
     <PreferenceCategory
 		android:title="S T A T U S B A R   P U L L D O W N"
 		android:key="quickcolor_pulldown">
-   				
+   		
 	 	<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="header_bar_color"
@@ -284,7 +285,7 @@
 			android:key="header_button_color"
 			android:title="Header Buttons Color"
 			android:summary="Color for header buttons"
-			android:defaultValue="#ffffffff" 
+			android:defaultValue="#ff33b5e5" 
 			alphaSlider="false" /> 	
 
 		<ColorPickerPreference
@@ -292,7 +293,7 @@
 			android:key="pd_shade_color"
 			android:title="Pulldown Shade"
 			android:summary="Color for statusbar pulldown shade"
-			android:defaultValue="#80000000" 
+			android:defaultValue="#eb000000" 
 			alphaSlider="true" /> 				
         	
 		<ColorPickerPreference
@@ -300,7 +301,7 @@
 			android:key="pd_handle_color"
 			android:title="Pulldown Handle Color"
 			android:summary="Color for statusbar pulldown handle"
-			android:defaultValue="#ff3792b4" 
+			android:defaultValue="#ff007aa7" 
 			alphaSlider="true" /> 	
 
 		<ColorPickerPreference
@@ -326,9 +327,9 @@
 			android:summary="Color for the battery temperature text"
 			android:defaultValue="#ff3792b4" 
 			alphaSlider="false" /> 
-			
 
-		 
+
+
     </PreferenceCategory>    
         
     
@@ -344,7 +345,7 @@
 			android:summary="Color for toggles"
 			android:defaultValue="#ff272727" 
 			alphaSlider="false" /> 
-		
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="toggles_icon_on_color"
@@ -368,7 +369,7 @@
 			android:summary="Color for toggle icons when off"
 			android:defaultValue="#ff555555" 
 			alphaSlider="false" />
-		
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="toggle_ind_on_color"
@@ -384,7 +385,7 @@
 			android:summary="Color for indicators (off)"
 			android:defaultValue="#ff555555" 
 			alphaSlider="false" /> 			
-			
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="toggle_text_on_color"
@@ -400,7 +401,7 @@
 			android:summary="Color for text label off"
 			android:defaultValue="#ff555555" 
 			alphaSlider="false" />
-		
+
 		<ColorPickerPreference
 			android:layout="?android:attr/preferenceLayoutChild"
 			android:key="toggle_divider_color"
@@ -408,9 +409,8 @@
 			android:summary="Color for dividers"
 			android:defaultValue="#ff3b3b3b" 
 			alphaSlider="false" />	
-		
+
     </PreferenceCategory>         				
  
         
 </PreferenceScreen>
-

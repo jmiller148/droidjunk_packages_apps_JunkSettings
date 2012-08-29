@@ -22,15 +22,41 @@
 
     
     <PreferenceCategory
-		android:title="D A T E"
-		android:key="date_settings">
+		android:title="H E A D E R"
+		android:key="header_settings">
+
+	<CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="header_clock_show"
+		android:summaryOn="Show the header clock in the pulldown"
+		android:summaryOff="Do not show the header clock in the pulldown"
+		android:title="Show Header Clock" 
+		android:defaultValue="true"	/>   
 
 	<DJSeekBarPreference 
 		android:layout="?android:attr/preferenceLayoutChild"
-		android:key="date_size"
-		android:title="Date Text Size"
-		android:summary="Size of the date text"
-		android:defaultValue="17" />		 	
+		android:key="header_clock_size"
+		android:title="Header Clock Text Size"
+		android:summary="Size of the header clock text"
+		android:defaultValue="35" />
+
+    <CheckBoxPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="header_date_show"
+		android:summaryOn="Show the header date in the pulldown"
+		android:summaryOff="Do not show the header date in the pulldown"
+		android:title="Show Header Date" 
+		android:defaultValue="true"	/>   
+
+	<DJSeekBarPreference 
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="header_date_size"
+		android:title="Header Date Text Size"
+		android:summary="Size of the header date text"
+		android:defaultValue="10" />		 	
+
+
+
 
     </PreferenceCategory>    
     
@@ -85,7 +111,7 @@
     <PreferenceCategory
 		android:title="B A T T E R Y   L E V E L"
 		android:key="battery_label_settings">
-	
+
 	<CheckBoxPreference
 		android:layout="?android:attr/preferenceLayoutChild"
 		android:key="show_battery_label"
@@ -107,7 +133,7 @@
     <PreferenceCategory
 		android:title="B A T T E R Y   T E M P E R A T U R E"
 		android:key="temp_label_settings">
-	
+
         
     <CheckBoxPreference
 		android:layout="?android:attr/preferenceLayoutChild"
@@ -134,4 +160,3 @@
 
 
 </PreferenceScreen>
-

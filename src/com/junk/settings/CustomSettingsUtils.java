@@ -38,16 +38,16 @@ public class CustomSettingsUtils {
 	private final static String CARRIER_CUSTOM = "carrier_custom";
 	private final static String CARRIER_CUSTOM_TEXT = "carrier_custom_text";
 	private final static String CARRIER_SIZE = "carrier_size";
-	private final static String DATE_COLOR = "date_color";
-	private final static String DATE_BAR_COLOR = "date_bar_color";
-	private final static String DATE_SIZE = "date_size";
-	private final static String CLEAR_BUTTON_COLOR = "clear_button_color";
-	private final static String CLEAR_BUTTON_TEXT_COLOR = "clear_button_text_color";
+	private final static String HEADER_CLOCK_SHOW = "header_clock_show";
+	private final static String HEADER_CLOCK_SIZE = "header_clock_size";
+	private final static String HEADER_DATE_SHOW = "header_date_show";
+	private final static String HEADER_DATE_SIZE = "header_date_size";
+	private final static String HEADER_BAR_COLOR = "header_bar_color";
+	private final static String HEADER_CLOCK_COLOR = "header_clock_color";
+	private final static String HEADER_DATE_COLOR = "header_date_color";
+	private final static String HEADER_BUTTON_COLOR = "header_button_color";
 	private final static String PD_HANDLE_COLOR = "pd_handle_color";
 	private final static String PD_SHADE_COLOR = "pd_shade_color";
-	private final static String PD_GRIP_COLOR = "pd_grip_color";
-	private final static String PD_CARRIER_FRAME_COLOR = "pd_carrier_frame_color";
-	private final static String PD_NOTIF_ICON_COLOR = "pd_notif_icon_color";
 	private final static String PD_NOTIF_ICON_BG_COLOR = "pd_notif_icon_bg_color";
 	private final static String PD_NOTIF_TEXT_COLOR = "pd_notif_text_color";
 	private final static String PD_NOTIF_TEXT_BG_COLOR = "pd_notif_text_bg_color";
@@ -135,7 +135,7 @@ public class CustomSettingsUtils {
 	private final static String SHOW_TOP_MENU_BUTTON_LAND = "top_menu_button_land";
 	private final static String SHOW_BOT_MENU_BUTTON_LAND = "bottom_menu_button_land";
 
-    private static boolean batteryBarBottom, batteryBarRight,clockLeft, clockCenter, clockRight;
+    private static boolean batteryBarBottom, batteryBarRight, clockLeft, clockCenter, clockRight;
     private static boolean showCarrier, carrierCustom, showBatteryLabel, showTempLabel;
     private static boolean showClock, clockAmPm, togglesShowToggles, togglesTop; 
     private static boolean togglesShowIndicator, toggleShowText, toggleShowDivider;
@@ -145,9 +145,11 @@ public class CustomSettingsUtils {
     private static boolean showRightMenuButton, showRightMenuButtonLand, showSearchButtonLand;
     private static boolean showTopMenuButtonLand, showBotMenuButtonLand;
     private static boolean showBatCircle, showBatNumber, showBatSquare;
+    private static boolean showHeaderClock, showHeaderDate;
     private static int circleLevelOneColor, circleLevelTwoColor, circleLevelThreeColor;
     private static int numberLevelOneColor, numberLevelTwoColor, numberLevelThreeColor;
-    private static int dateBarColor, shadeColor, gripColor, carrierBarColor, notifIconColor, notifIconBgColor;
+    private static int shadeColor, notifIconBgColor, headerClockSize, headerDateSize, headerBarColor;
+    private static int headerClockColor, headerDateColor, headerButtonColor, closeHandleColor;
     private static int notifTextColor, notifTextBgColor, navBarColor, navBarButtonColor, navBarGlowColor, navBarAnim;
     private static int batteryBarWidth, batteryLevelOne, batteryLevelOneColor;
     private static int batteryLevelTwo, batteryLevelTwoColor, batteryLevelThreeColor, depletedLevelOne;
@@ -157,7 +159,7 @@ public class CustomSettingsUtils {
     private static int carrierColor, iconColor, clockColor, clockSize, toggleColor, toggleIconOnColor;
     private static int toggleIconInterColor, toggleIconOffColor, toggleIndOnColor, toggleIndOffColor;
     private static int toggleTextOnColor, toggleTextOffColor, toggleDividerColor;
-    private static int carrierSize, dateColor, dateSize, clearButtonColor, clearButtonTextColor, closeBarColor;
+    private static int carrierSize;
 	private static String carrierCustomText;
 	private static int batteryIconNum;
 
@@ -238,16 +240,15 @@ public class CustomSettingsUtils {
     	carrierSize = prefMgr.getInt(CARRIER_SIZE, 15);
     	carrierCustom = prefMgr.getBoolean(CARRIER_CUSTOM, false);
         carrierCustomText = prefMgr.getString(CARRIER_CUSTOM_TEXT, "J u n k   R O M");
-    	dateColor = prefMgr.getInt(DATE_COLOR, 0xff3F9BBF);
-    	dateBarColor = prefMgr.getInt(DATE_BAR_COLOR, 0xff000000);
-    	dateSize = prefMgr.getInt(DATE_SIZE, 17);
-    	closeBarColor = prefMgr.getInt(PD_HANDLE_COLOR, 0xd7000000);
-    	clearButtonTextColor = prefMgr.getInt(CLEAR_BUTTON_TEXT_COLOR, 0xffffffff);
-    	clearButtonColor = prefMgr.getInt(CLEAR_BUTTON_COLOR, 0xff1a4554);
+    	showHeaderClock = prefMgr.getBoolean(HEADER_CLOCK_SHOW, true);
+    	headerClockSize = prefMgr.getInt(HEADER_CLOCK_SIZE, 35);
+    	showHeaderDate = prefMgr.getBoolean(HEADER_DATE_SHOW, true);
+    	headerDateSize = prefMgr.getInt(HEADER_DATE_SIZE, 10);
+    	headerBarColor = prefMgr.getInt(HEADER_BAR_COLOR, 0xff000000);
+    	headerClockColor = prefMgr.getInt(HEADER_CLOCK_COLOR, 0xffffffff);
+    	headerDateColor = prefMgr.getInt(HEADER_DATE_COLOR, 0xffffffff);
+    	headerButtonColor = prefMgr.getInt(HEADER_BUTTON_COLOR, 0xffffffff);
     	shadeColor = prefMgr.getInt(PD_SHADE_COLOR, 0xbd000000);
-    	gripColor = prefMgr.getInt(PD_GRIP_COLOR, 0xff3792b4);
-    	carrierBarColor = prefMgr.getInt(PD_CARRIER_FRAME_COLOR, 0xd3000000);
-    	notifIconColor = prefMgr.getInt(PD_NOTIF_ICON_COLOR, 0xffffffff);
     	notifIconBgColor = prefMgr.getInt(PD_NOTIF_ICON_BG_COLOR, 0xff1a4554);
     	notifTextColor = prefMgr.getInt(PD_NOTIF_TEXT_COLOR, 0xff000000);
     	notifTextBgColor = prefMgr.getInt(PD_NOTIF_TEXT_BG_COLOR, 0xff2782a3);
@@ -307,9 +308,14 @@ public class CustomSettingsUtils {
         editor.putBoolean(SHOW_CARRIER, showCarrier);  
         editor.putBoolean(CARRIER_CUSTOM, carrierCustom);
         editor.putInt(CARRIER_SIZE, carrierSize);
-        editor.putInt(DATE_COLOR, dateColor);
-        editor.putInt(DATE_BAR_COLOR, dateBarColor);
-        editor.putInt(DATE_SIZE, dateSize);
+        editor.putBoolean(HEADER_CLOCK_SHOW, showHeaderClock);
+        editor.putInt(HEADER_CLOCK_SIZE, headerClockSize);
+        editor.putBoolean(HEADER_DATE_SHOW, showHeaderDate);
+        editor.putInt(HEADER_DATE_SIZE, headerDateSize);
+        editor.putInt(HEADER_BAR_COLOR, headerBarColor);
+        editor.putInt(HEADER_CLOCK_COLOR, headerClockColor);
+        editor.putInt(HEADER_DATE_COLOR, headerDateColor);
+        editor.putInt(HEADER_BUTTON_COLOR, headerButtonColor);
     	editor.putBoolean(SHOW_BATTERY_LABEL, showBatteryLabel);
     	editor.putInt(BATTERY_LABEL_COLOR, batteryLabelLevelColor);
     	editor.putInt(BATTERY_LABEL_SIZE, batteryLabelLevelSize);
@@ -358,13 +364,8 @@ public class CustomSettingsUtils {
         editor.putInt(TOGGLE_DIVIDER_COLOR, toggleDividerColor);
         editor.putString(CARRIER_CUSTOM_TEXT, carrierCustomText);
         editor.putInt(CARRIER_SIZE, carrierSize);
-        editor.putInt(PD_HANDLE_COLOR, closeBarColor);
-        editor.putInt(CLEAR_BUTTON_TEXT_COLOR, clearButtonTextColor);
-        editor.putInt(CLEAR_BUTTON_COLOR, clearButtonColor);
+        editor.putInt(PD_HANDLE_COLOR, closeHandleColor);
         editor.putInt(PD_SHADE_COLOR, shadeColor);
-        editor.putInt(PD_GRIP_COLOR, gripColor);
-        editor.putInt(PD_CARRIER_FRAME_COLOR, carrierBarColor);
-        editor.putInt(PD_NOTIF_ICON_COLOR, notifIconColor);
         editor.putInt(PD_NOTIF_ICON_BG_COLOR, notifIconBgColor);
         editor.putInt(PD_NOTIF_TEXT_COLOR, notifTextColor);
         editor.putInt(PD_NOTIF_TEXT_BG_COLOR, notifTextBgColor);
@@ -791,23 +792,52 @@ public class CustomSettingsUtils {
         i.putExtra(CARRIER_SIZE, (Integer) carrierSize);
         context.sendBroadcast(i);
         i = null;
-        	
+        
       	i = new Intent();
       	i.setAction(Junk_Pulldown_Settings);
-       	i.putExtra(DATE_COLOR, (Integer) dateColor);
+       	i.putExtra(HEADER_CLOCK_SHOW, (Boolean) showHeaderClock);
        	context.sendBroadcast(i);
        	i = null;        
 
       	i = new Intent();
       	i.setAction(Junk_Pulldown_Settings);
-       	i.putExtra(DATE_BAR_COLOR, (Integer) dateBarColor);
+       	i.putExtra(HEADER_CLOCK_SIZE, (Integer) headerClockSize);
        	context.sendBroadcast(i);
        	i = null;        
        	
-       	
        	i = new Intent();
         i.setAction(Junk_Pulldown_Settings);
-        i.putExtra(DATE_SIZE, (Integer) dateSize);
+        i.putExtra(HEADER_DATE_SHOW, (Boolean) showHeaderDate);
+        context.sendBroadcast(i);
+        i = null;       	 
+
+       	i = new Intent();
+        i.setAction(Junk_Pulldown_Settings);
+        i.putExtra(HEADER_DATE_SIZE, (Integer) headerDateSize);
+        context.sendBroadcast(i);
+        i = null;       	 
+        
+       	i = new Intent();
+        i.setAction(Junk_Pulldown_Settings);
+        i.putExtra(HEADER_BAR_COLOR, (Integer) headerBarColor);
+        context.sendBroadcast(i);
+        i = null;       	 
+
+       	i = new Intent();
+        i.setAction(Junk_Pulldown_Settings);
+        i.putExtra(HEADER_CLOCK_COLOR, (Integer) headerClockColor);
+        context.sendBroadcast(i);
+        i = null;       	 
+
+        i = new Intent();
+        i.setAction(Junk_Pulldown_Settings);
+        i.putExtra(HEADER_DATE_COLOR, (Integer) headerDateColor);
+        context.sendBroadcast(i);
+        i = null;       	 
+
+        i = new Intent();
+        i.setAction(Junk_Pulldown_Settings);
+        i.putExtra(HEADER_BUTTON_COLOR, (Integer) headerButtonColor);
         context.sendBroadcast(i);
         i = null;       	 
         
@@ -847,15 +877,10 @@ public class CustomSettingsUtils {
    	   	context.sendBroadcast(i);
    	   	i = null;             
    	   	
-   	   	i = new Intent();
-    	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(CLEAR_BUTTON_COLOR, (Integer) clearButtonColor);
-    	context.sendBroadcast(i);
-    	i = null;      
     	
     	i = new Intent();
     	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(PD_HANDLE_COLOR, (Integer) closeBarColor);
+    	i.putExtra(PD_HANDLE_COLOR, (Integer) closeHandleColor);
     	context.sendBroadcast(i);
     	i = null;              	
     	
@@ -864,24 +889,6 @@ public class CustomSettingsUtils {
     	i.putExtra(PD_SHADE_COLOR, (Integer) shadeColor);
     	context.sendBroadcast(i);
     	i = null;              	
-    	
-    	i = new Intent();
-    	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(PD_GRIP_COLOR, (Integer) gripColor);
-    	context.sendBroadcast(i);
-    	i = null;              	
-    	
-    	i = new Intent();
-    	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(PD_CARRIER_FRAME_COLOR, (Integer) carrierBarColor);
-    	context.sendBroadcast(i);
-    	i = null;              	
-
-    	i = new Intent();
-    	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(PD_NOTIF_ICON_COLOR, (Integer) notifIconColor);
-    	context.sendBroadcast(i);
-    	i = null;               	
     	
     	i = new Intent();
     	i.setAction(Junk_Pulldown_Settings );

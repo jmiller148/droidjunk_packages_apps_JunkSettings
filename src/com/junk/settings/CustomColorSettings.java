@@ -77,7 +77,6 @@ public class CustomColorSettings extends PreferenceFragment implements
 	private final String HEADER_BAR_COLOR = "header_bar_color";
 	private final String HEADER_CLOCK_COLOR = "header_clock_color";
 	private final String HEADER_DATE_COLOR = "header_date_color";
-
 	private final String HEADER_BUTTON_COLOR = "header_button_color";
 	private final String PD_HANDLE_COLOR = "pd_handle_color";
 	private final String PD_SHADE_COLOR = "pd_shade_color";

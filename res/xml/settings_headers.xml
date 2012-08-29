@@ -22,39 +22,48 @@
     <header android:title="@string/backup_restore_label" />
     <header android:title="@string/backup_restore"
         	android:id="@+id/backup_settings"
+        	android:icon="@drawable/junk_settings_backup"
         	android:fragment="com.junk.settings.CustomBackupRestore"
         	/>
 
- 
-    <!-- COLORS -->
-    <header android:title="@string/colors_label" />
-    <header android:title="@string/quick_colors"
-        	android:id="@+id/quick_colors"
-        	android:fragment="com.junk.settings.CustomQuickColorSettings"
-        	/>
-    <header android:title="@string/group_colors"
-        	android:id="@+id/backup_settings"
-        	android:fragment="com.junk.settings.CustomColorGroups"
-        	/>
-        	 
-     
+    
     <!-- THEMES -->
     <header android:title="@string/themes_label" />
         <header 
     	    android:title="@string/theme_settings"
         	android:id="@+id/theme_settings"
+        	android:icon="@drawable/junk_settings_presets"
         	android:fragment="com.junk.settings.CustomThemeSettings"
         	 />
+        
+        
+    <!-- COLORS -->
+    <header android:title="@string/colors_label" />
+    <header android:title="@string/quick_colors"
+        	android:id="@+id/quick_colors"
+        	android:icon="@drawable/junk_settings_quick_color"
+        	android:fragment="com.junk.settings.CustomQuickColorSettings"
+        	/>
+    <header android:title="@string/group_colors"
+        	android:id="@+id/color_settings"
+        	android:icon="@drawable/junk_settings_color"
+        	android:fragment="com.junk.settings.CustomColorGroups"
+        	/>
+        	 
+     
+
     
     <!-- NOTIFICATION  SETTINGS -->
     <header android:title="@string/notifications_label" />
     	<header 
     	    android:title="@string/quiet_time_main_settings" 
         	android:id="@+id/qt_main_settings"
+        	android:icon="@drawable/junk_settings_quiet_time"
         	android:fragment="com.junk.settings.CustomQuietTimeMainSettings"
 	        />
     <header android:title="@string/led_settings"
         	android:id="@+id/led_settings"
+        	android:icon="@drawable/junk_settings_led"
         	android:fragment="com.junk.settings.CustomLedSettings"
 	         />    
     
@@ -65,6 +74,7 @@
     	<header 
     	    android:title="@string/clock_settings"
         	android:id="@+id/clock_settings"
+        	android:icon="@drawable/junk_settings_clock"
         	android:fragment="com.junk.settings.CustomClockSettings"
         	 />
     
@@ -72,17 +82,20 @@
     	<header 
     	    android:title="@string/battery_icon_settings"
            	android:id="@+id/battery_icon_settings"
+           	android:icon="@drawable/junk_settings_battery"
         	android:fragment="com.junk.settings.CustomBatteryIconSettings"
         	/>
 
     	<header android:title="@string/battery_settings"   
            	android:id="@+id/battery_settings"
+           	android:icon="@drawable/junk_settings_battery_extra"
         	android:fragment="com.junk.settings.CustomBatterySettings"
         	/>
     		
     	<!-- Charging -->    	
     	<header android:title="@string/charging_settings"
            	android:id="@+id/charging_settings"
+           	android:icon="@drawable/junk_settings_charge"
         	android:fragment="com.junk.settings.CustomChargeSettings"
         	/>
     
@@ -91,6 +104,7 @@
     	<!-- Pulldown -->    	
     	<header android:title="@string/pulldown_settings"
            	android:id="@+id/pulldown_settings"
+           	android:icon="@drawable/junk_settings_pulldown"
         	android:fragment="com.junk.settings.CustomPulldownSettings"
         	/>
     
@@ -98,6 +112,7 @@
     	<!-- Toggles -->    	
     	<header android:title="@string/toggle_settings"
            	android:id="@+id/toggle_settings"
+           	android:icon="@drawable/junk_settings_toggle"
         	android:fragment="com.junk.settings.CustomToggleSettings"
         	/>
     
@@ -105,6 +120,7 @@
     	<!-- Navigation Bar -->    	
     	<header android:title="@string/navbar_settings"
            	android:id="@+id/navbar_settings"
+           	android:icon="@drawable/junk_settings_navbar"
         	android:fragment="com.junk.settings.CustomNavBarSettings"
         	/>
         
