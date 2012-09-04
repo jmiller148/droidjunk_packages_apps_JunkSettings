@@ -31,7 +31,7 @@
 		android:summaryOn="LED pulse"
 		android:summaryOff="LED flash"
 		android:title="Pulse or Flash Led" 
-		android:defaultValue="false"
+		android:defaultValue="true"
 		/>    
 	
 	<CheckBoxPreference 
@@ -68,14 +68,14 @@
 		android:dependency="default_led_color_on"
    		android:key="default_led_on_ms"
 		android:title="LED On Time Adjustment"
-		android:defaultValue="3" />	
+		android:defaultValue="5" />	
 		
 	<DJSeekBarPreference	
 		android:layout="?android:attr/preferenceLayoutChild"
 		android:dependency="default_led_color_on"
    		android:key="default_led_off_ms"
 		android:title="LED Off Time Adjustment"
-		android:defaultValue="3" />
+		android:defaultValue="5" />
 			
    	</PreferenceCategory>
 

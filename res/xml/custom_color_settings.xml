@@ -198,7 +198,7 @@
 		<ColorPickerPreference
 			android:key="nav_lightsout_color"
 			android:title="Navigation Lights Out Color"
-			android:defaultValue="#80ffffff"
+			android:defaultValue="#70ffffff"
 			alphaSlider="true" />		
 
 
@@ -232,9 +232,33 @@
 		android:key="pd_notif_icon_bg_color"
 		android:title="Icon Background Color"
 		android:summary="Background color for the notification icon (reboot required)"
-		android:defaultValue="#ff0e303d" 
+		android:defaultValue="#ff111111" 
 		alphaSlider="false" /> 		
-        
+
+ 	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="pd_notif_text_bg_color"
+		android:title="Text Background Color"
+		android:summary="Background color for the notification text (reboot required)"
+		android:defaultValue="#ff111111" 
+		alphaSlider="false" />  	
+ 	
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="pd_notif_title_color"
+		android:title="Title Color"
+		android:summary="Notification title color (reboot required)"
+		android:defaultValue="#ffffffff" 
+		alphaSlider="false" /> 		
+ 	
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="pd_notif_time_color"
+		android:title="Time Color"
+		android:summary="Notification time color (reboot required)"
+		android:defaultValue="#ffffffff" 
+		alphaSlider="false" /> 		
+		
 	<ColorPickerPreference
 		android:layout="?android:attr/preferenceLayoutChild"
 		android:key="pd_notif_text_color"
@@ -242,16 +266,31 @@
 		android:summary="Notification text color (reboot required)"
 		android:defaultValue="#fff6f6f6" 
 		alphaSlider="false" /> 		
- 	
- 	
- 	<ColorPickerPreference
+		
+	<ColorPickerPreference
 		android:layout="?android:attr/preferenceLayoutChild"
-		android:key="pd_notif_text_bg_color"
-		android:title="Text Background Color"
-		android:summary="Background color for the notification text (reboot required)"
-		android:defaultValue="#ff154557" 
+		android:key="pd_notif_divider_color"
+		android:title="Divider Color"
+		android:summary="Notification divider color (reboot required)"
+		android:defaultValue="#fff6f6f6" 
 		alphaSlider="false" /> 		
-
+			
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="pd_notif_subtext_color"
+		android:title="Subtext Color"
+		android:summary="Notification subtext color (reboot required)"
+		android:defaultValue="#ffffffff" 
+		alphaSlider="false" /> 		
+	
+	<ColorPickerPreference
+		android:layout="?android:attr/preferenceLayoutChild"
+		android:key="pd_notif_small_icon_color"
+		android:title="Small Icon Color"
+		android:summary="Notification small icon color (reboot required)"
+		android:defaultValue="#ffffffff" 
+		alphaSlider="false" /> 		
+		
     </PreferenceCategory>
 
         
@@ -346,7 +385,7 @@
 			android:key="toggle_color"
 			android:title="Toggle Background Color"
 			android:summary="Color for toggles"
-			android:defaultValue="#ff272727" 
+			android:defaultValue="#ff111111" 
 			alphaSlider="false" /> 
 
 		<ColorPickerPreference
@@ -410,7 +449,7 @@
 			android:key="toggle_divider_color"
 			android:title="Divider Color"
 			android:summary="Color for dividers"
-			android:defaultValue="#ff3b3b3b" 
+			android:defaultValue="#ff131313" 
 			alphaSlider="false" />	
 
     </PreferenceCategory>         				

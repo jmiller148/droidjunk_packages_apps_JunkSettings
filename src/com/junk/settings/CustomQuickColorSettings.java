@@ -114,17 +114,26 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 
 	private final String QK_PD_HANDLE_COLOR = "qk_pd_handle_color";
 	private final String QK_PD_SHADE_COLOR = "qk_pd_shade_color";
-//	private final String QK_PD_NOTIF_ICON_COLOR = "qk_pd_notif_icon_color";
 	private final String QK_PD_NOTIF_ICON_BG_COLOR = "qk_pd_notif_icon_bg_color";
-	private final String QK_PD_NOTIF_TEXT_COLOR = "qk_pd_notif_text_color";
 	private final String QK_PD_NOTIF_TEXT_BG_COLOR = "qk_pd_notif_text_bg_color";
+	private final String QK_PD_NOTIF_TEXT_COLOR = "qk_pd_notif_text_color";
+	private final String QK_PD_NOTIF_TITLE_COLOR = "qk_pd_notif_title_color";
+	private final String QK_PD_NOTIF_TIME_COLOR = "qk_pd_notif_time_color";
+	private final String QK_PD_NOTIF_DIVIDER_COLOR = "qk_pd_notif_divider_color";
+	private final String QK_PD_NOTIF_SUBTEXT_COLOR = "qk_pd_notif_subtext_color";
+	private final String QK_PD_NOTIF_SMALL_ICON_COLOR = "qk_pd_notif_small_icon_color";
 	private final String PD_HANDLE_COLOR = "pd_handle_color";
 	private final String PD_SHADE_COLOR = "pd_shade_color";
-//	private final String PD_NOTIF_ICON_COLOR = "pd_notif_icon_color";
 	private final String PD_NOTIF_ICON_BG_COLOR = "pd_notif_icon_bg_color";
-	private final String PD_NOTIF_TEXT_COLOR = "pd_notif_text_color";
 	private final String PD_NOTIF_TEXT_BG_COLOR = "pd_notif_text_bg_color";
+	private final String PD_NOTIF_TITLE_COLOR = "pd_notif_title_color";
+	private final String PD_NOTIF_TIME_COLOR = "pd_notif_time_color";
+	private final String PD_NOTIF_TEXT_COLOR = "pd_notif_text_color";
+	private final String PD_NOTIF_DIVIDER_COLOR = "pd_notif_divider_color";
+	private final String PD_NOTIF_SUBTEXT_COLOR = "pd_notif_subtext_color";
+	private final String PD_NOTIF_SMALL_ICON_COLOR = "pd_notif_small_icon_color";
 
+	
 	//Clock
 	private final String Junk_Clock_Settings = "JUNK_CLOCK_SETTINGS";
 	private final String QK_CLOCK_COLOR = "qk_clock_color";
@@ -193,8 +202,13 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
 	private CheckBoxPreference mHeaderButton;
     private CheckBoxPreference mShadeColor;
     private CheckBoxPreference mNotifIconBgColor;
-    private CheckBoxPreference mNotifTextColor;
     private CheckBoxPreference mNotifTextBgColor;
+    private CheckBoxPreference mNotifTitleColor;
+    private CheckBoxPreference mNotifTimeColor;
+    private CheckBoxPreference mNotifTextColor;
+    private CheckBoxPreference mNotifDividerColor;
+    private CheckBoxPreference mNotifSubtextColor;
+    private CheckBoxPreference mNotifSmallIconColor;
     private CheckBoxPreference mCarrierColor;
     private CheckBoxPreference mBatteryColor;
     private CheckBoxPreference mTempColor;
@@ -293,14 +307,22 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
     	mHeaderButton.setOnPreferenceChangeListener(this);
         mShadeColor = (CheckBoxPreference) findPreference(QK_PD_SHADE_COLOR);
 		mShadeColor.setOnPreferenceChangeListener(this);        
-//      mNotifIconColor = (Preference) findPreference(QK_PD_NOTIF_ICON_COLOR);
-//		mNotifIconColor.setOnPreferenceChangeListener(this);        
         mNotifIconBgColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_ICON_BG_COLOR);
         mNotifIconBgColor.setOnPreferenceChangeListener(this);        
-        mNotifTextColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_TEXT_COLOR);
-        mNotifTextColor.setOnPreferenceChangeListener(this);        
         mNotifTextBgColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_TEXT_BG_COLOR);
         mNotifTextBgColor.setOnPreferenceChangeListener(this);        
+        mNotifTitleColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_TITLE_COLOR);
+        mNotifTitleColor.setOnPreferenceChangeListener(this);        
+        mNotifTimeColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_TIME_COLOR);
+        mNotifTimeColor.setOnPreferenceChangeListener(this);        
+        mNotifTextColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_TEXT_COLOR);
+        mNotifTextColor.setOnPreferenceChangeListener(this);        
+        mNotifDividerColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_DIVIDER_COLOR);
+        mNotifDividerColor.setOnPreferenceChangeListener(this);        
+        mNotifSubtextColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_SUBTEXT_COLOR);
+        mNotifSubtextColor.setOnPreferenceChangeListener(this);        
+        mNotifSmallIconColor = (CheckBoxPreference) findPreference(QK_PD_NOTIF_SMALL_ICON_COLOR);
+        mNotifSmallIconColor.setOnPreferenceChangeListener(this);        
         mClockColor = (CheckBoxPreference) findPreference(QK_CLOCK_COLOR);
 		mClockColor.setOnPreferenceChangeListener(this);
     	mToggleColor = (CheckBoxPreference) findPreference(QK_TOGGLE_COLOR);
@@ -957,21 +979,6 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
         	i = null;              	
         }  		
 
-  		
-/*  		if (mNotifIconColor.isChecked()) {
-  			
-        	sharedPref = prefMgr.getSharedPreferences();
-        	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(PD_NOTIF_ICON_COLOR, (Integer) objValue);
-            editor.commit();
-  			
-        	Intent i = new Intent();
-        	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(PD_NOTIF_ICON_COLOR, (Integer) objValue);
-        	getActivity().sendBroadcast(i);
-        	i = null;              	
-       	}  	*/	
-
   		if (mNotifIconBgColor.isChecked()) {
   			
         	sharedPref = prefMgr.getSharedPreferences();
@@ -982,6 +989,48 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
         	Intent i = new Intent();
         	i.setAction(Junk_Pulldown_Settings );
         	i.putExtra(PD_NOTIF_ICON_BG_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+  		}  		
+
+  		if (mNotifTextBgColor.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(PD_NOTIF_TEXT_BG_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(PD_NOTIF_TEXT_BG_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+  		}  		
+  		
+  		if (mNotifTitleColor.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(PD_NOTIF_TITLE_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(PD_NOTIF_TITLE_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+  		}  		
+
+  		if (mNotifTimeColor.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(PD_NOTIF_TIME_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(PD_NOTIF_TIME_COLOR, (Integer) objValue);
         	getActivity().sendBroadcast(i);
         	i = null;              	
   		}  		
@@ -998,21 +1047,52 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
         	i.putExtra(PD_NOTIF_TEXT_COLOR, (Integer) objValue);
         	getActivity().sendBroadcast(i);
         	i = null;              	
-       }  		
+  		}  		
 
-  		if (mNotifTextBgColor.isChecked()) {
+  		if (mNotifDividerColor.isChecked()) {
   			
         	sharedPref = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(PD_NOTIF_TEXT_BG_COLOR, (Integer) objValue);
+            editor.putInt(PD_NOTIF_DIVIDER_COLOR, (Integer) objValue);
             editor.commit();
   			
         	Intent i = new Intent();
         	i.setAction(Junk_Pulldown_Settings );
-        	i.putExtra(PD_NOTIF_TEXT_BG_COLOR, (Integer) objValue);
+        	i.putExtra(PD_NOTIF_DIVIDER_COLOR, (Integer) objValue);
         	getActivity().sendBroadcast(i);
         	i = null;              	
-       }  		
+  		}  		
+
+  		if (mNotifSubtextColor.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(PD_NOTIF_SUBTEXT_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(PD_NOTIF_SUBTEXT_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+  		}  		
+
+  		if (mNotifSmallIconColor.isChecked()) {
+  			
+        	sharedPref = prefMgr.getSharedPreferences();
+        	SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(PD_NOTIF_SMALL_ICON_COLOR, (Integer) objValue);
+            editor.commit();
+  			
+        	Intent i = new Intent();
+        	i.setAction(Junk_Pulldown_Settings );
+        	i.putExtra(PD_NOTIF_SMALL_ICON_COLOR, (Integer) objValue);
+        	getActivity().sendBroadcast(i);
+        	i = null;              	
+  		}  		
+
+  		
+  		
   		
   		
   		
@@ -1053,8 +1133,13 @@ public class CustomQuickColorSettings extends PreferenceFragment implements
     	mHeaderButton.setChecked(false);
         mShadeColor.setChecked(false);
         mNotifIconBgColor.setChecked(false);
-        mNotifTextColor.setChecked(false);
         mNotifTextBgColor.setChecked(false);
+        mNotifTitleColor.setChecked(false);
+        mNotifTimeColor.setChecked(false);
+        mNotifTextColor.setChecked(false);
+        mNotifDividerColor.setChecked(false);
+        mNotifSubtextColor.setChecked(false);
+        mNotifSmallIconColor.setChecked(false);
         mClockColor.setChecked(false);
     	mToggleColor.setChecked(false);
     	mToggleIconOnColor.setChecked(false);

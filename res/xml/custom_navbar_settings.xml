@@ -27,12 +27,6 @@
    	<PreferenceCategory
 		android:title="P O R T R A I T   M O D E   B U T T O N S">
 	
-        <CheckBoxPreference
-        	android:layout="?android:attr/preferenceLayoutChild"
-			android:key="search_button"
-			android:title="Show search button"
-			android:defaultValue="false"	
-			 />
 			
        <CheckBoxPreference
        		android:layout="?android:attr/preferenceLayoutChild"
@@ -54,13 +48,7 @@
    	<PreferenceCategory
 		android:title="L A N D S C A P E   M O D E   B U T T O N S">
 	
-        <CheckBoxPreference
-        	android:layout="?android:attr/preferenceLayoutChild"
-			android:key="search_button_land"
-			android:title="Show search button"
-			android:defaultValue="false"
-			 />
-			
+		
        <CheckBoxPreference
        		android:layout="?android:attr/preferenceLayoutChild"
 			android:key="top_menu_button_land"

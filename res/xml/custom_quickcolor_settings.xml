@@ -286,7 +286,25 @@
 		android:key="qk_pd_notif_icon_bg_color"
 		android:title="Icon Background" 
 		android:defaultValue="false"	/>	
-        
+ 
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_text_bg_color"
+		android:title="Text Background" 
+		android:defaultValue="false"	/>		
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_title_color"
+		android:title="Title" 
+		android:defaultValue="false"	/>	
+
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_time_color"
+		android:title="Time" 
+		android:defaultValue="false"	/>	
+		
 	<CheckBoxPreference 
 		android:layout="?android:attr/preferenceLayoutChild" 
 		android:key="qk_pd_notif_text_color"
@@ -295,10 +313,22 @@
 
 	<CheckBoxPreference 
 		android:layout="?android:attr/preferenceLayoutChild" 
-		android:key="qk_pd_notif_text_bg_color"
-		android:title="Text Background" 
+		android:key="qk_pd_notif_divider_color"
+		android:title="Divider" 
 		android:defaultValue="false"	/>	
-    
+	
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_subtext_color"
+		android:title="Subtext" 
+		android:defaultValue="false"	/>	
+		
+	<CheckBoxPreference 
+		android:layout="?android:attr/preferenceLayoutChild" 
+		android:key="qk_pd_notif_small_icon_color"
+		android:title="Small Icon" 
+		android:defaultValue="false"	/>	
+		
     </PreferenceCategory>        
     
     

@@ -35,6 +35,7 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
 
 	private final String Junk_Battery_Settings = "JUNK_BATTERY_SETTINGS";
 	private final String BATTERY_ICONS = "battery_icon_num";
+	private final String BATTERY_ICON = "battery_icon";
 	private final String BATTERY_STOCK = "battery_stock";
 	private final String BATTERY_NUMBER = "battery_number";
 	private final String BATTERY_CIRCLE = "battery_circle";
@@ -55,6 +56,7 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     
     private SharedPreferences sp;
     private int mBatteryNum = 0;
+    private String mBatteryNumString = "0";
 	
 	
 	
@@ -94,9 +96,10 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
 		mBatteryNone.setChecked(false);
 		
         sp = prefMgr.getSharedPreferences();
-        mBatteryNum = sp.getInt(BATTERY_ICONS, 0);
-		
-       	if (mBatteryNum == 0) {
+        mBatteryNumString = sp.getString(BATTERY_ICONS, "0");
+        mBatteryNum = Integer.valueOf(mBatteryNumString);
+
+        if (mBatteryNum == 0) {
        		mBatteryStock.setChecked(true);
        	} else if (mBatteryNum == 1) {
        		mBatteryNumber.setChecked(true);
@@ -150,12 +153,13 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     		
            	sp = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sp.edit();
-            editor.putInt(BATTERY_ICONS, 0);
+            editor.putString(BATTERY_ICONS, "0");
+            editor.putInt(BATTERY_ICON, 0);
             editor.commit();
   			
         	Intent i = new Intent();
             i.setAction(Junk_Battery_Settings);
-            i.putExtra(BATTERY_ICONS, 0);
+            i.putExtra(BATTERY_ICONS, "0");
             getActivity().sendBroadcast(i);
             i = null;  			
     		
@@ -170,12 +174,13 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     		
            	sp = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sp.edit();
-            editor.putInt(BATTERY_ICONS, 1);
+            editor.putString(BATTERY_ICONS, "1");
+            editor.putInt(BATTERY_ICON, 1);
             editor.commit();
   			
         	Intent i = new Intent();
             i.setAction(Junk_Battery_Settings);
-            i.putExtra(BATTERY_ICONS, 1);
+            i.putExtra(BATTERY_ICONS, "1");
             getActivity().sendBroadcast(i);
             i = null;  			
     	
@@ -190,12 +195,13 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     		
            	sp = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sp.edit();
-            editor.putInt(BATTERY_ICONS, 2);
+            editor.putString(BATTERY_ICONS, "2");
+            editor.putInt(BATTERY_ICON, 2);
             editor.commit();
   			
         	Intent i = new Intent();
             i.setAction(Junk_Battery_Settings);
-            i.putExtra(BATTERY_ICONS, 2);
+            i.putExtra(BATTERY_ICONS, "2");
             getActivity().sendBroadcast(i);
             i = null;  			
     		
@@ -210,12 +216,13 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     		
            	sp = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sp.edit();
-            editor.putInt(BATTERY_ICONS, 3);
+            editor.putString(BATTERY_ICONS, "3");
+            editor.putInt(BATTERY_ICON, 3);
             editor.commit();
   			
         	Intent i = new Intent();
             i.setAction(Junk_Battery_Settings);
-            i.putExtra(BATTERY_ICONS, 3);
+            i.putExtra(BATTERY_ICONS, "3");
             getActivity().sendBroadcast(i);
             i = null;  			
     		
@@ -230,12 +237,13 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     		
            	sp = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sp.edit();
-            editor.putInt(BATTERY_ICONS, 4);
+            editor.putString(BATTERY_ICONS, "4");
+            editor.putInt(BATTERY_ICON, 4);
             editor.commit();
   			
         	Intent i = new Intent();
             i.setAction(Junk_Battery_Settings);
-            i.putExtra(BATTERY_ICONS, 4);
+            i.putExtra(BATTERY_ICONS, "4");
             getActivity().sendBroadcast(i);
             i = null;  			
     		
@@ -250,12 +258,13 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     		
            	sp = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sp.edit();
-            editor.putInt(BATTERY_ICONS, 5);
+            editor.putString(BATTERY_ICONS, "5");
+            editor.putInt(BATTERY_ICON, 5);
             editor.commit();
   			
         	Intent i = new Intent();
             i.setAction(Junk_Battery_Settings);
-            i.putExtra(BATTERY_ICONS, 5);
+            i.putExtra(BATTERY_ICONS, "5");
             getActivity().sendBroadcast(i);
             i = null;  			
     		
@@ -270,12 +279,13 @@ public class CustomBatteryIconSettings extends PreferenceFragment implements
     		
            	sp = prefMgr.getSharedPreferences();
         	SharedPreferences.Editor editor = sp.edit();
-            editor.putInt(BATTERY_ICONS, 6);
+            editor.putString(BATTERY_ICONS, "6");
+            editor.putInt(BATTERY_ICON, 6);
             editor.commit();
   			
         	Intent i = new Intent();
             i.setAction(Junk_Battery_Settings);
-            i.putExtra(BATTERY_ICONS, 6);
+            i.putExtra(BATTERY_ICONS, "6");
             getActivity().sendBroadcast(i);
             i = null;  			
     		

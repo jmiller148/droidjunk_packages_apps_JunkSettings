@@ -17,17 +17,16 @@
 package com.junk.settings;
 
 
+import android.app.Notification;
+import android.app.Notification.Builder;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.ColorPickerPreference;
-import android.util.Log;
 import android.widget.ListView;
 
 
@@ -83,10 +82,14 @@ public class CustomColorSettings extends PreferenceFragment implements
 	private final String PD_HANDLE_COLOR = "pd_handle_color";
 	private final String PD_SHADE_COLOR = "pd_shade_color";
 	private final String PD_NOTIF_ICON_BG_COLOR = "pd_notif_icon_bg_color";
-	private final String PD_NOTIF_TEXT_COLOR = "pd_notif_text_color";
 	private final String PD_NOTIF_TEXT_BG_COLOR = "pd_notif_text_bg_color";
-
-
+	private final String PD_NOTIF_TITLE_COLOR = "pd_notif_title_color";
+	private final String PD_NOTIF_TIME_COLOR = "pd_notif_time_color";
+	private final String PD_NOTIF_TEXT_COLOR = "pd_notif_text_color";
+	private final String PD_NOTIF_DIVIDER_COLOR = "pd_notif_divider_color";
+	private final String PD_NOTIF_SUBTEXT_COLOR = "pd_notif_subtext_color";
+	private final String PD_NOTIF_SMALL_ICON_COLOR = "pd_notif_small_icon_color";
+	
 	//Clock
 	private final String Junk_Clock_Settings = "JUNK_CLOCK_SETTINGS";
 	private final String CLOCK_COLOR = "clock_color";
@@ -143,8 +146,14 @@ public class CustomColorSettings extends PreferenceFragment implements
     private Preference mHeaderButtonColor;
     private Preference mShadeColor;
     private Preference mNotifIconBgColor;
-    private Preference mNotifTextColor;
     private Preference mNotifTextBgColor;
+    private Preference mNotifTitleColor;
+    private Preference mNotifTimeColor;
+    private Preference mNotifTextColor;
+    private Preference mNotifDividerColor;
+    private Preference mNotifSubtextColor;
+    private Preference mNotifSmallIconColor;
+    
 
     
     private Preference mClockColor;
@@ -242,10 +251,20 @@ public class CustomColorSettings extends PreferenceFragment implements
 		mShadeColor.setOnPreferenceChangeListener(this);        
         mNotifIconBgColor = (Preference) findPreference(PD_NOTIF_ICON_BG_COLOR);
         mNotifIconBgColor.setOnPreferenceChangeListener(this);        
+        mNotifTextBgColor = (Preference) findPreference(PD_NOTIF_TEXT_BG_COLOR);
+        mNotifTextBgColor.setOnPreferenceChangeListener(this);  
+        mNotifTitleColor = (Preference) findPreference(PD_NOTIF_TITLE_COLOR);
+        mNotifTitleColor.setOnPreferenceChangeListener(this);        
+        mNotifTimeColor = (Preference) findPreference(PD_NOTIF_TIME_COLOR);
+        mNotifTimeColor.setOnPreferenceChangeListener(this);        
         mNotifTextColor = (Preference) findPreference(PD_NOTIF_TEXT_COLOR);
         mNotifTextColor.setOnPreferenceChangeListener(this);        
-        mNotifTextBgColor = (Preference) findPreference(PD_NOTIF_TEXT_BG_COLOR);
-        mNotifTextBgColor.setOnPreferenceChangeListener(this);        
+        mNotifDividerColor = (Preference) findPreference(PD_NOTIF_DIVIDER_COLOR);
+        mNotifDividerColor.setOnPreferenceChangeListener(this);        
+        mNotifSubtextColor = (Preference) findPreference(PD_NOTIF_SUBTEXT_COLOR);
+        mNotifSubtextColor.setOnPreferenceChangeListener(this);        
+        mNotifSmallIconColor = (Preference) findPreference(PD_NOTIF_SMALL_ICON_COLOR);
+        mNotifSmallIconColor.setOnPreferenceChangeListener(this);        
     	mToggleColor = (Preference) findPreference(TOGGLE_COLOR);
     	mToggleColor.setOnPreferenceChangeListener(this);
     	mToggleIconOnColor = (Preference) findPreference(TOGGLE_ICON_ON_COLOR);
@@ -614,35 +633,11 @@ public class CustomColorSettings extends PreferenceFragment implements
     	i.putExtra(PD_SHADE_COLOR, (Integer) objValue);
     	getActivity().sendBroadcast(i);
     	i = null;         	
-
-    } else if (PD_NOTIF_ICON_BG_COLOR.equals(key)) {
-    	Intent i = new Intent();
-    	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(PD_NOTIF_ICON_BG_COLOR, (Integer) objValue);
-    	getActivity().sendBroadcast(i);
-    	i = null;          	
-
-    } else if (PD_NOTIF_TEXT_COLOR.equals(key)) {
-    	Intent i = new Intent();
-    	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(PD_NOTIF_TEXT_COLOR, (Integer) objValue);
-    	getActivity().sendBroadcast(i);
-    	i = null;          	
     	
-    } else if (PD_NOTIF_TEXT_BG_COLOR.equals(key)) {
-    	Intent i = new Intent();
-    	i.setAction(Junk_Pulldown_Settings );
-    	i.putExtra(PD_NOTIF_TEXT_BG_COLOR, (Integer) objValue);
-    	getActivity().sendBroadcast(i);
-    	i = null;         	
+    }	
+    
+    return true;
     }
-    
-    
-        return true;
-    }
- 
-    
-
     
  
 } 

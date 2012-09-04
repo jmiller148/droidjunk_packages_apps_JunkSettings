@@ -96,7 +96,7 @@ public class CustomBatterySettings extends PreferenceFragment implements
         prefMgr.getSharedPreferences();
         sp = prefMgr.getSharedPreferences();
         
-        mBatteryIconValue = sp.getInt(BATTERY_ICONS, 0);
+        mBatteryIconValue = Integer.valueOf(sp.getString(BATTERY_ICONS, "0"));
  
         // Set the preferences based on what battery is chosen
 
@@ -484,7 +484,7 @@ public class CustomBatterySettings extends PreferenceFragment implements
     	
     		Intent i = new Intent();
     		i.setAction(Junk_Battery_Settings );
-   	   		i.putExtra(BATTERY_ICONS, sp.getInt(BATTERY_ICONS, 0));
+   	   		i.putExtra(BATTERY_ICONS, sp.getString(BATTERY_ICONS, "0"));
    	   		getActivity().sendBroadcast(i);
    	   		i = null;
  
