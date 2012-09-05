@@ -23,6 +23,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.CheckBoxPreference;
 import android.text.Html;
@@ -71,12 +72,9 @@ public class CustomQuietTimeMainSettings extends PreferenceFragment implements
     private Preference mQtFriday;
     private Preference mQtSaturday;
     
+    private PreferenceManager prefMgr;
     private SharedPreferences sp;
     public String mDayString;
-    private boolean dailyOn, sunOn, monOn, tueOn, wedOn, thurOn, friOn, satOn = false;
-    private boolean mTurnOffLed = false;
-    private boolean mTurnOffSound = false;
-    private boolean mTurnOffVibrate = false;
     private int mStopMin = 0;
     private int mStopHour = 0;
     private int mStartMin = 0;
@@ -88,8 +86,10 @@ public class CustomQuietTimeMainSettings extends PreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        sp = getActivity().getBaseContext().getSharedPreferences(
-        		"Junk_Settings", Context.MODE_WORLD_READABLE);
+        prefMgr = getPreferenceManager();
+        prefMgr.setSharedPreferencesName("Junk_Settings");
+        prefMgr.setSharedPreferencesMode(Context.MODE_WORLD_READABLE);
+        sp = prefMgr.getSharedPreferences();
         
         addPreferencesFromResource(R.xml.custom_quiet_time_main_settings);
         

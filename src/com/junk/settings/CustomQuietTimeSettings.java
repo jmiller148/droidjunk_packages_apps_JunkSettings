@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.CheckBoxPreference;
 import android.widget.TimePicker;
@@ -50,6 +51,7 @@ public class CustomQuietTimeSettings extends PreferenceFragment implements
 	private final String QT_FRI = "_fri";
 	private final String QT_SAT = "_sat";
     
+	private PreferenceManager prefMgr;
 	private SharedPreferences sp;
 	
 	private CheckBoxPreference mQuietTimeOn;
@@ -80,8 +82,10 @@ public class CustomQuietTimeSettings extends PreferenceFragment implements
         
         day = getActivity().getIntent().getIntExtra("junk_qt_day", 0); 
         
-        sp = getActivity().getBaseContext().getSharedPreferences("Junk_Settings", Context.MODE_WORLD_READABLE);
-        
+        prefMgr = getPreferenceManager();
+        prefMgr.setSharedPreferencesName("Junk_Settings");
+        prefMgr.setSharedPreferencesMode(Context.MODE_WORLD_READABLE);
+        sp = prefMgr.getSharedPreferences();        
         addPreferencesFromResource(R.xml.custom_quiet_time_settings);
         
         mQuietTimeOn = (CheckBoxPreference) findPreference(QUIET_TIME);
