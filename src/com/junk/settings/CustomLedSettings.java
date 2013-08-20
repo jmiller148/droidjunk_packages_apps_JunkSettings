@@ -36,7 +36,6 @@ public class CustomLedSettings extends PreferenceFragment implements
 
 	private final String Junk_Led_Settings = "JUNK_LED_SETTINGS";
 	private final String USE_LED = "use_led";
-	private final String PULSE_FLASH_LED = "pulse_flash_led";
 	private final String DEFAULT_LED_COLOR_ON = "default_led_color_on";	
 	private final String DEFAULT_LED_COLOR = "default_led_color";	
 	private final String DEFAULT_LED_ON_MS = "default_led_on_ms";
@@ -64,7 +63,6 @@ public class CustomLedSettings extends PreferenceFragment implements
 	private PreferenceManager prefMgr;
 
 	private CheckBoxPreference mUseLed;
-	private CheckBoxPreference mPulseFlashLed;
 	private CheckBoxPreference mDefaultLedColorOn;
 	private Preference mDefaultLedColor;
 	private DJSeekBarPreference mDefaultLedOnMs;
@@ -104,8 +102,6 @@ public class CustomLedSettings extends PreferenceFragment implements
         
         mUseLed = (CheckBoxPreference) findPreference(USE_LED);
         mUseLed.setOnPreferenceChangeListener(this);
-        mPulseFlashLed = (CheckBoxPreference) findPreference(PULSE_FLASH_LED);
-        mPulseFlashLed.setOnPreferenceChangeListener(this);
         mDefaultLedColorOn = (CheckBoxPreference) findPreference(DEFAULT_LED_COLOR_ON);
         mDefaultLedColorOn.setOnPreferenceChangeListener(this);
         mDefaultLedColor = (Preference) findPreference(DEFAULT_LED_COLOR);
@@ -201,13 +197,6 @@ public class CustomLedSettings extends PreferenceFragment implements
          	getActivity().sendBroadcast(i);
          	i = null; 
     	
-     	} else if (PULSE_FLASH_LED.equals(key)) {
-         	Intent i = new Intent();
-         	i.setAction(Junk_Led_Settings);
-         	i.putExtra(PULSE_FLASH_LED, (Boolean) objValue);
-         	getActivity().sendBroadcast(i);
-         	i = null;          	
-         	
      	} else if (DEFAULT_LED_COLOR_ON.equals(key)) {
          	Intent i = new Intent();
          	i.setAction(Junk_Led_Settings);

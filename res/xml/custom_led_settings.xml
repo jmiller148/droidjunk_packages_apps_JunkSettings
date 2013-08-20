@@ -26,14 +26,6 @@
 		android:defaultValue="true"
 		/>    
 
-	<CheckBoxPreference
-		android:key="pulse_flash_led"
-		android:summaryOn="LED pulse"
-		android:summaryOff="LED flash"
-		android:title="Pulse or Flash Led" 
-		android:defaultValue="true"
-		/>    
-	
 	<CheckBoxPreference 
 		android:key="pulse_led_screen_on"
 		android:summaryOn="Pulse LED with Screen On"
