@@ -35,19 +35,17 @@ public class CustomClockSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     
 	private final String Junk_Clock_Settings = "JUNK_CLOCK_SETTINGS";
-	private final String SHOW_CLOCK_LEFT = "show_clock_left";
-	private final String SHOW_CLOCK_CENTER = "show_clock_center";
-	private final String SHOW_CLOCK_RIGHT = "show_clock_right";
+	private final String SHOW_CLOCK = "show_clock";
 	private final String CLOCK_AMPM = "clock_ampm";
 	private final String CLOCK_SIZE = "clock_size";
+	private final String CLOCK_COLOR = "clock_color";
     
 	private PreferenceManager prefMgr;
 	private SharedPreferences sharedPref;
-	private CheckBoxPreference mShowClockLeft;
-	private CheckBoxPreference mShowClockCenter;
-	private CheckBoxPreference mShowClockRight;
+	private CheckBoxPreference mShowClock;
 	private CheckBoxPreference mClockAmPm;
     private DJSeekBarPreference mClockSize;
+	private Preference mClockColor;
     public int mSize = 17;
     
 
@@ -63,19 +61,17 @@ public class CustomClockSettings extends PreferenceFragment implements
         
         prefMgr = getPreferenceManager();
         prefMgr.setSharedPreferencesName("Junk_Settings");
-        prefMgr.setSharedPreferencesMode(Context.MODE_WORLD_READABLE);
+        prefMgr.setSharedPreferencesMode(Context.MODE_PRIVATE);
         prefMgr.getSharedPreferences();
 
         addPreferencesFromResource(R.xml.custom_clock_settings);
         
-        mShowClockLeft = (CheckBoxPreference) findPreference(SHOW_CLOCK_LEFT);
-		mShowClockLeft.setOnPreferenceChangeListener(this);
-        mShowClockCenter = (CheckBoxPreference) findPreference(SHOW_CLOCK_CENTER);
-		mShowClockCenter.setOnPreferenceChangeListener(this);
-        mShowClockRight = (CheckBoxPreference) findPreference(SHOW_CLOCK_RIGHT);
-		mShowClockRight.setOnPreferenceChangeListener(this);
+        mShowClock = (CheckBoxPreference) findPreference(SHOW_CLOCK);
+		mShowClock.setOnPreferenceChangeListener(this);
         mClockAmPm = (CheckBoxPreference) findPreference(CLOCK_AMPM);
 		mClockAmPm.setOnPreferenceChangeListener(this);
+        mClockColor = (Preference) findPreference(CLOCK_COLOR);
+		mClockColor.setOnPreferenceChangeListener(this);
 	    mClockSize = (DJSeekBarPreference) findPreference(CLOCK_SIZE);
 		mClockSize.setOnPreferenceChangeListener(this);
 		mSize = prefMgr.getSharedPreferences().getInt(CLOCK_SIZE, 17);  
@@ -109,70 +105,12 @@ public class CustomClockSettings extends PreferenceFragment implements
   
      	final String key = preference.getKey();
 
-        if (SHOW_CLOCK_LEFT.equals(key)) {
-    		mShowClockCenter.setChecked(false);
-    		mShowClockRight.setChecked(false);
+        if (SHOW_CLOCK.equals(key)) {
         	Intent i = new Intent();
             i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_LEFT, (Boolean) objValue);
+            i.putExtra(SHOW_CLOCK, (Boolean) objValue);
             getActivity().sendBroadcast(i);
             i = null;
-            
-        	i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_CENTER, false);
-            getActivity().sendBroadcast(i);
-            i = null;
-            
-        	i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_RIGHT, false);
-            getActivity().sendBroadcast(i);
-            i = null;
-
-        } else if (SHOW_CLOCK_CENTER.equals(key)) {
-    		mShowClockLeft.setChecked(false);
-    		mShowClockRight.setChecked(false);
-        	Intent i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_CENTER, (Boolean) objValue);
-            getActivity().sendBroadcast(i);
-            i = null;
-            
-        	i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_LEFT, false);
-            getActivity().sendBroadcast(i);
-            i = null;
-            
-        	i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_RIGHT, false);
-            getActivity().sendBroadcast(i);
-            i = null;
-            
-            
-        } else if (SHOW_CLOCK_RIGHT.equals(key)) {
-    		mShowClockCenter.setChecked(false);
-    		mShowClockLeft.setChecked(false);
-        	Intent i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_RIGHT, (Boolean) objValue);
-            getActivity().sendBroadcast(i);
-            i = null;
-            
-        	i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_LEFT, false);
-            getActivity().sendBroadcast(i);
-            i = null;
-            
-        	i = new Intent();
-            i.setAction(Junk_Clock_Settings );
-            i.putExtra(SHOW_CLOCK_CENTER, false);
-            getActivity().sendBroadcast(i);
-            i = null;
-
             
         } else if (CLOCK_AMPM.equals(key)) {
         	Intent i = new Intent();
@@ -181,8 +119,14 @@ public class CustomClockSettings extends PreferenceFragment implements
             getActivity().sendBroadcast(i);
             i = null;
         
+        } else if (CLOCK_COLOR.equals(key)) {
+        	Intent i = new Intent();
+            i.setAction(Junk_Clock_Settings );
+            i.putExtra(CLOCK_COLOR, (Integer) objValue);
+            getActivity().sendBroadcast(i);
+            i = null;
+            
         } else if (CLOCK_SIZE.equals(key)) {
-
         	Intent i = new Intent();
             i.setAction(Junk_Clock_Settings );
             i.putExtra(CLOCK_SIZE, (Integer) objValue + 10);
